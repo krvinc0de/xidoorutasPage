@@ -1,0 +1,86 @@
+body {
+  background-color: #242424;
+}
+
+#navcol-1 {
+  color: #f4e7e7;
+}
+
+#nav-link {
+}
+
+#home {
+  color: #f4e7e7;
+}
+
+nav {
+  color: #f4e7e7;
+}
+
+a {
+}
+
+#aplicacion {
+  color: #f4e7e7;
+}
+
+#nosotros {
+  color: #f4e7e7;
+}
+
+#contactanos {
+  color: #f4e7e7;
+}
+
+#login {
+  color: #f4e7e7;
+}
+
+#titulo {
+  color: #F2C94C;
+  text-align: center;
+  font-size: 150px;
+  font-style: normal;
+}
+
+#imgtitulo {
+  display: block;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+
+#tituloservicio {
+  color: #f2c94c;
+  text-align: center;
+  /*color: #f2c94c;*/
+  /*text-align: center;*/
+  font-size: 80px;
+}
+
+#pservicios {
+  color: #f4e7e7;
+  text-align: center;
+  font-size: 30px;
+}
+
+#imgrutas {
+  display: block;
+  margin: auto;
+}
+
+#imgpublicidadlocal {
+  display: block;
+  margin: auto;
+}
+
+#imganunciosoficiales {
+  display: block;
+  margin: auto;
+}
+
+#imgtodo {
+  display: block;
+  margin: auto;
+}
+
