@@ -14,7 +14,7 @@ $message .= "Enviado el: " . date('d/m/Y', time()."\r\n");
 $message .= "\r\n";
 $message .= "\r\nPor favor, avisale:)";
 
-$para = 'soporte@xidoorutas.codes';
+$para = 'xidoorutas@gmail.com';
 $asunto = 'A ' . $nombre . ' le interesa la aplicacion.';
 
 mail($para, $asunto, utf8_decode($message), $header);

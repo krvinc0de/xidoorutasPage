@@ -17,7 +17,7 @@ $message .= $nombre . " quiere decir: ". $asunto . " \r\n";
 $message .= "\r\n";
 $message .= "Enviado el: " . date('d/m/Y', time()."\r\n");
 
-$para = 'soporte@xidoorutas.codes';
+$para = 'xidoorutas@gmail.com';
 $asunto = 'El usuario: '. $nombre . ' quiere contactarnos!';
 
 mail($para, $asunto, utf8_decode($message), $header);
