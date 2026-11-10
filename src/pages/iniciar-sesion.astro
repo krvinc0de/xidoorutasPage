@@ -1,0 +1,42 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/ui/PageHead.astro';
+import SectionHead from '../components/ui/SectionHead.astro';
+import Button from '../components/ui/Button.astro';
+import IconRing from '../components/ui/IconRing.astro';
+import Wordmark from '../components/sections/Wordmark.astro';
+import { login } from '../data/pages';
+---
+<Base title={login.meta.title} description={login.meta.description} current="/iniciar-sesion.html">
+  <section class="pt-16">
+    <div class="wrap">
+      <span class="rise inline-flex items-center h-6 px-2.5 mb-6 rounded-full bg-sun text-on-sun font-body text-xs font-semibold tracking-[.02em]">{login.status}</span>
+      <PageHead eyebrow={login.eyebrow} title={login.title} accent={login.accent} lede={login.lede}>
+        <Button href="/#avisame">Avísame cuando salga</Button>
+        <Button href="/" variant="line">Volver al inicio</Button>
+      </PageHead>
+    </div>
+  </section>
+
+  <section class="pt-28" aria-labelledby="beneficios-h">
+    <div class="wrap">
+      <SectionHead id="beneficios-h" eyebrow={login.benefits.eyebrow} title={login.benefits.title} />
+      <ul class="list-none m-0 p-0 grid grid-cols-3 gap-x-10 max-[900px]:grid-cols-2 max-[600px]:grid-cols-1">
+        {login.benefits.items.map((b) => (
+          <li class="reveal grid gap-3.5 content-start py-8 border-t border-line">
+            <IconRing name={b.icon} size="sm" />
+            <h3 class="text-[22px] font-semibold leading-[1.2] tracking-[-0.02em]">{b.title}</h3>
+            <p class="text-ink-soft">{b.text}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <Wordmark />
+  <div class="pb-24"></div>
+</Base>
+
+<script>
+  import '../scripts/motion';
+</script>

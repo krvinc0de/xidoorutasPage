@@ -8,8 +8,7 @@ web
 
 ## Stack
 
-Actual: HTML estático + Bootstrap, con PHP (`sc.php`, `scontact.php`) para enviar los formularios por correo. Cada página tiene su propia copia de assets en `src/assets*/`.
-Nuevo (nov 2026): Astro, con el código en `site/` y los assets en `public/`. El inicio ya está migrado. Las demás páginas HTML y los PHP se copian sin cambios al build (`astro.config.mjs`) hasta que se migren.
+Astro 5 (sitio estático) + Tailwind CSS v4 + GSAP. Código en `src/`, imágenes en `public/`. Los tokens vienen del Design System «Xidoo Rutas» en Claude (https://claude.ai/artifact/MXacJD8xAmBZvK3BXz9yUy), copiados en `src/styles/tokens.css`. Desde nov 2026 ya no hay HTML heredado, Bootstrap ni PHP.
 
 ## Users
 
@@ -27,27 +26,26 @@ Abierto: todavía no se define qué diferencia a Xidoo Rutas frente a Google Map
 ## Operating Context
 
 - Se usa en la ciudad, muchas veces desde el celular mientras alguien espera o planea un viaje.
-- El sitio actual tiene: Inicio, Empresa (equipo y trayectoria), Aplicación (lista de espera por correo), Nosotros/desarrolladores, Actualizaciones (galería), Contacto (formulario) y Próximamente (inicio de sesión para negocios).
-- Los formularios envían correo a la cuenta del proyecto mediante `mail()` de PHP.
+- El sitio tiene cuatro páginas: Inicio, Aplicación (lista de espera), Contacto (formulario) e Iniciar sesión (aviso de «Próximamente» para negocios). `proximamente.html` redirige a Iniciar sesión.
+- Por ahora los formularios son de demostración: validan y responden en la página, pero no envían nada. Falta decidir cómo se mandarán los datos.
 
 ## Capabilities and Constraints
 
-- Funciones que se mantienen en el relanzamiento: **Rutas/horarios/costos**, **Ruta Cultural**, **Publicidad Local** (perfiles de negociantes).
-- **Anuncios Oficiales se retira** del alcance del relanzamiento. No hay que presentarla como función.
+- Funciones del relanzamiento: **Rutas/horarios/costos**, **Ruta Cultural**, **Comercios Locales** (perfiles de negociantes) y **Anuncios de la Comunidad** (avisos oficiales de la ciudad). Anuncios se había retirado y se reincorporó en nov 2026: el sitio la presenta como el cuarto servicio.
 - El inicio de sesión para comerciantes y la descarga de la app todavía no están disponibles. La página tiene que comunicar con honestidad lo que sigue pendiente.
 - Decisiones abiertas: la fecha de lanzamiento y las tiendas y plataformas de la app.
 
 ## Brand Commitments
 
-- Nombre: Xidoo Rutas (también aparece como "XidooRutas"). Logos en `src/assetsempresa/img/logo.png` y `src/assets/img/BoxLogo.png`.
+- Nombre: Xidoo Rutas (también aparece como "XidooRutas"). Logotipo: autobús en un disco amarillo (`public/favicon.svg`, `src/components/ui/Logo.astro`).
 - Hashtag existente: #ConectandoLaCiudad.
 - Voz: cercana, local, en español de México y dirigida a "los salmantinos".
 
 ## Evidence on Hand
 
-- Trayectoria real (`empresa.html`): idea en sept. 2020; presentación en dic. 2020; desarrollo desde ene. 2021; primer prototipo en jun. 2021; **segundo lugar nacional en CONIES 2021 (edición Tamaulipas), categoría emprendimiento tecnológico, frente a 100 universidades**; exposición en dic. 2021; versión de prueba presentada al público en abr. 2022.
-- Equipo de 5 desarrolladores con fotos (`src/assetsdevs/img/`, `devs/*.html`).
-- Capturas de la app (`src/assets/img/`, `src/assetsempresa/img/`, `src/assetsaplicacion/img/celular.png`).
+- Trayectoria real (`src/data/home.ts`): idea en sept. 2020; presentación en dic. 2020; desarrollo desde ene. 2021; primer prototipo en jun. 2021; **segundo lugar nacional en CONIES 2021 (edición Tamaulipas), categoría emprendimiento tecnológico, frente a 100 universidades**; exposición en dic. 2021; versión de prueba presentada al público en abr. 2022.
+- Equipo de 5 estudiantes de la UTS (las fotos y páginas del equipo se retiraron del sitio en nov 2026; están en el historial de git).
+- Capturas de la app en `public/img/app/`.
 - No existen: testimonios, cifras de usuarios, alianzas ni datos de cobertura. No se deben inventar.
 
 ## Product Principles

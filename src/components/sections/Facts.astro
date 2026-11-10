@@ -1,0 +1,13 @@
+---
+import { facts } from '../../data/home';
+---
+<div class="bg-bg-raise">
+  <div class="wrap grid grid-cols-3 gap-7 py-10 max-[640px]:grid-cols-1 max-[640px]:gap-5">
+    {facts.map((f) => (
+      <div class="reveal">
+        <b class="block font-display text-[clamp(26px,3.2vw,34px)] font-bold leading-[1.1] tracking-[-0.03em] text-accent">{f.value}</b>
+        <span class="text-[15px] text-ink-soft">{f.text}</span>
+      </div>
+    ))}
+  </div>
+</div>

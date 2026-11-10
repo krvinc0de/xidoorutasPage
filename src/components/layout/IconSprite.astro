@@ -1,0 +1,11 @@
+---
+// Sprite con los 43 íconos del Design System; se incluye una vez en Base.astro.
+import { icons } from '../ui/icons';
+---
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    {Object.entries(icons).map(([name, body]) => (
+      <symbol id={`i-${name}`} viewBox="0 0 24 24" set:html={body} />
+    ))}
+  </defs>
+</svg>

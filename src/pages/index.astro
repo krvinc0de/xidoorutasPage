@@ -1,0 +1,24 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/sections/Hero.astro';
+import Facts from '../components/sections/Facts.astro';
+import Services from '../components/sections/Services.astro';
+import Timeline from '../components/sections/Timeline.astro';
+import Wordmark from '../components/sections/Wordmark.astro';
+import Waitlist from '../components/sections/Waitlist.astro';
+---
+<Base
+  title="Xidoo Rutas · Tu ciudad, en movimiento"
+  description="Rutas, horarios y tarifas del transporte público de Salamanca, Guanajuato, junto con cultura, comercio local y avisos oficiales. Todo en una sola app."
+>
+  <Hero />
+  <Facts />
+  <Services />
+  <Timeline />
+  <Wordmark />
+  <Waitlist />
+</Base>
+
+<script>
+  import '../scripts/motion';
+</script>

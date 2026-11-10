@@ -1,0 +1,18 @@
+---
+// Captura de la app sobre las líneas de ruta del mapa original (hero del inicio y de Aplicación).
+interface Props { src: string; width: number; height: number; alt: string }
+const { src, width, height, alt } = Astro.props;
+const lines = [
+  { d: 'M-20 170 H300 Q340 170 360 210 L450 410 Q470 450 510 450 H920', c: 'var(--sun)' },
+  { d: 'M-20 340 H200 Q240 340 260 310 L320 220 Q340 190 380 190 H560 Q600 190 620 230 L700 390 Q715 420 750 420 H920', c: 'var(--r-blue)' },
+  { d: 'M150 -20 V120 Q150 150 180 165 L350 260 Q380 275 420 275 H920', c: 'var(--r-green)' },
+  { d: 'M-20 500 H330 Q370 500 400 470 L640 130 Q660 105 700 105 H920', c: 'var(--r-red)' },
+];
+---
+<div class="relative h-[580px] max-[820px]:h-[520px]">
+  <svg class="draw absolute top-0 bottom-0 -left-[30%] w-[170%] h-full max-[820px]:-left-[20%] max-[820px]:w-[140%]" viewBox="0 0 900 580" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    {lines.map((l) => <path d={l.d} stroke={l.c} fill="none" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />)}
+  </svg>
+  <img class="hero-shot rise [animation-delay:.15s] relative block mx-auto top-2.5 w-[282px] max-w-[80%] h-auto will-change-transform"
+    src={src} width={width} height={height} alt={alt} fetchpriority="high" />
+</div>

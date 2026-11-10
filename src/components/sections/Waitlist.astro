@@ -1,0 +1,32 @@
+---
+// Banda amarilla con el formulario «Avísame» (demo: valida y responde, no envía nada).
+// Se usa en el inicio y en Aplicación; el texto puede cambiar por página.
+import Button from '../ui/Button.astro';
+import Field from '../ui/Field.astro';
+import StoreBadge from '../ui/StoreBadge.astro';
+import { waitlist } from '../../data/home';
+
+interface Props { title?: string; text?: string }
+const { title = waitlist.title, text = waitlist.text } = Astro.props;
+---
+<section class="mt-32 bg-sun text-on-sun" id="avisame" aria-labelledby="avisame-h">
+  <div class="wrap grid grid-cols-[1.1fr_1fr] gap-10 items-center py-[88px] max-[760px]:grid-cols-1 max-[760px]:py-16">
+    <div class="reveal">
+      <h2 id="avisame-h" class="text-[clamp(38px,5.4vw,60px)] font-extrabold leading-none tracking-[-0.045em]">{title}</h2>
+      <p class="mt-3.5 text-lg max-w-[36ch] opacity-80">{text}</p>
+      <div class="flex flex-wrap gap-2.5 mt-[26px]">
+        {waitlist.stores.map((s) => <StoreBadge label={s.label} status={s.status} onSun />)}
+      </div>
+    </div>
+    <form class="reveal grid gap-2.5" data-demo-form data-success="¡Listo, {nombre}! Te avisaremos cuando la app esté lista." novalidate>
+      <Field id="wl-name" name="nombre" label="Nombre" placeholder="Tu nombre" autocomplete="name" required error="Escribe tu nombre para continuar." />
+      <Field id="wl-email" name="email" label="Correo" type="email" placeholder="tu@correo.com" autocomplete="email" required error="Revisa tu correo, parece incompleto." />
+      <Button type="submit" variant="dark" class="mt-1.5 py-4">Avísame</Button>
+      <p class="text-sm font-semibold min-h-[1.4em]" role="status" data-form-msg></p>
+    </form>
+  </div>
+</section>
+
+<script>
+  import '../../scripts/demo-form';
+</script>

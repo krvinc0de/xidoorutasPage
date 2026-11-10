@@ -1,0 +1,19 @@
+---
+// Trayectoria: fecha, hito y descripción entre líneas finas; el hito clave en accent.
+import SectionHead from '../ui/SectionHead.astro';
+import { timeline } from '../../data/home';
+---
+<section class="pt-28" id="trayectoria" aria-labelledby="trayectoria-h">
+  <div class="wrap">
+    <SectionHead id="trayectoria-h" eyebrow={timeline.eyebrow} title={timeline.title} />
+    <ol class="list-none m-0 p-0 border-t border-line">
+      {timeline.items.map((m) => (
+        <li class="reveal grid grid-cols-[140px_1fr_1.4fr] gap-6 py-[26px] border-b border-line items-baseline max-[760px]:grid-cols-1 max-[760px]:gap-1.5">
+          <time datetime={m.datetime} class:list={['font-mono text-[13px] font-medium leading-none tracking-[.06em]', m.highlight ? 'text-accent' : 'text-ink-soft']}>{m.date}</time>
+          <b class:list={['font-display text-[22px] font-semibold leading-[1.2] tracking-[-0.02em]', m.highlight && 'text-accent']}>{m.title}</b>
+          <span class="text-ink-soft">{m.text}</span>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

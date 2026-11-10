@@ -1,0 +1,11 @@
+---
+// Logotipo + «XIDOO / RUTAS» en League Spartan.
+import Logo from './Logo.astro';
+interface Props { href?: string }
+const { href = '/' } = Astro.props;
+---
+<a href={href} aria-label="Xidoo Rutas, inicio"
+  class="flex items-center gap-[9px] no-underline font-brand text-[17px] leading-[0.86] font-extrabold uppercase tracking-normal">
+  <Logo />
+  <span class="pt-[3px]">Xidoo<br />Rutas</span>
+</a>

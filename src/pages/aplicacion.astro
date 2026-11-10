@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/ui/PageHead.astro';
+import RouteStage from '../components/ui/RouteStage.astro';
+import StoreBadge from '../components/ui/StoreBadge.astro';
+import Services from '../components/sections/Services.astro';
+import Waitlist from '../components/sections/Waitlist.astro';
+import { app } from '../data/pages';
+import { waitlist } from '../data/home';
+---
+<Base title={app.meta.title} description={app.meta.description} current="/aplicacion.html">
+  <section class="pt-16 pb-10 overflow-hidden">
+    <div class="wrap grid grid-cols-[1.1fr_.9fr] gap-10 items-center max-[820px]:grid-cols-1">
+      <PageHead eyebrow={app.eyebrow} title={app.title} accent={app.accent} lede={app.lede}>
+        {waitlist.stores.map((s) => <StoreBadge label={s.label} status={s.status} soon />)}
+      </PageHead>
+      <RouteStage {...app.shot} />
+    </div>
+  </section>
+  <Services {...app.services} />
+  <Waitlist {...app.waitlist} />
+</Base>
+
+<script>
+  import '../scripts/motion';
+</script>

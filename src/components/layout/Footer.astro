@@ -1,0 +1,17 @@
+---
+import { footer } from '../../data/site';
+const year = new Date().getFullYear();
+const link = 'no-underline text-ink hover:text-accent';
+---
+<footer class="text-[13px] text-ink-soft">
+  <div class="wrap flex flex-wrap gap-x-7 gap-y-3.5 justify-between py-8">
+    <span>
+      Xidoo Rutas © 2021–{year} · Salamanca, Gto. ·
+      <a class={link} href={footer.site.href} target="_blank" rel="noopener">{footer.site.label}</a> ·
+      <b class="text-accent font-semibold">{footer.handle}</b> · {footer.tag}
+    </span>
+    <nav aria-label="Redes sociales" class="flex gap-5">
+      {footer.socials.map((s) => <a class={link} href={s.href} target="_blank" rel="noopener">{s.label}</a>)}
+    </nav>
+  </div>
+</footer>

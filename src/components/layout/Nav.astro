@@ -1,0 +1,54 @@
+---
+// Menú superior: translúcido y fijo; en móvil los enlaces pasan a un panel con el botón Menú.
+import Brand from '../ui/Brand.astro';
+import Button from '../ui/Button.astro';
+import Icon from '../ui/Icon.astro';
+import ThemeToggle from '../ui/ThemeToggle.astro';
+import type { NavLink } from '../../data/site';
+
+interface Props { links: NavLink[]; login: NavLink; cta: NavLink; current?: string }
+const { links, login, cta, current } = Astro.props;
+// La página actual lleva subrayado accent de 2 px (Menú superior del Design System).
+const linkClass = 'no-underline text-ink-soft transition-colors duration-200 hover:text-ink aria-[current=page]:text-ink';
+const barClass = 'aria-[current=page]:shadow-[0_2px_0_var(--accent)] aria-[current=page]:pb-1.5';
+---
+<header class="sticky top-[env(safe-area-inset-top,0px)] z-[5] bg-nav-bg backdrop-blur-[20px] backdrop-saturate-[180%] border-b border-line">
+  <div class="wrap flex items-center gap-6 h-14">
+    <Brand />
+    <nav aria-label="Principal" class="ml-auto max-[860px]:hidden">
+      <ul class="flex gap-[22px] list-none m-0 p-0 text-sm">
+        {links.map((l) => <li><a href={l.href} class:list={[linkClass, barClass]} aria-current={current === l.href ? 'page' : undefined}>{l.label}</a></li>)}
+      </ul>
+    </nav>
+    <div class="flex items-center gap-3 max-[860px]:ml-auto">
+      <a href={login.href} class:list={[linkClass, barClass, 'text-sm max-[520px]:hidden']} aria-current={current === login.href ? 'page' : undefined}>{login.label}</a>
+      <ThemeToggle />
+      <Button href={cta.href} size="sm">{cta.label}</Button>
+      <button type="button" data-menu-btn aria-expanded="false" aria-controls="menu-movil" aria-label="Abrir menú"
+        class="hidden max-[860px]:grid place-items-center size-10 border-0 rounded-full cursor-pointer bg-transparent text-ink shadow-[inset_0_0_0_1.5px_var(--line)]">
+        <Icon name="menu" />
+      </button>
+    </div>
+  </div>
+  <nav id="menu-movil" aria-label="Principal" hidden class="min-[861px]:hidden border-t border-line">
+    <ul class="wrap list-none m-0 py-2 grid">
+      {[...links, login].map((l) => (
+        <li><a href={l.href} class:list={[linkClass, 'flex items-center min-h-tap text-base aria-[current=page]:text-accent']} aria-current={current === l.href ? 'page' : undefined}>{l.label}</a></li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const btn = document.querySelector<HTMLButtonElement>('[data-menu-btn]');
+  const panel = document.getElementById('menu-movil');
+  btn?.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') !== 'true';
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    if (panel) panel.hidden = !open;
+  });
+  panel?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => {
+    panel.hidden = true; btn?.setAttribute('aria-expanded', 'false'); btn?.setAttribute('aria-label', 'Abrir menú');
+  }));
+</script>

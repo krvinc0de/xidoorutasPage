@@ -1,0 +1,18 @@
+---
+// Badge de tienda. Cambiar «Próximamente en» por «Disponible en» al publicar.
+// onSun: sobre la banda amarilla (fondo on-sun) · si no, contorno line sobre bg.
+import Icon from './Icon.astro';
+interface Props { label: string; status: string; onSun?: boolean; soon?: boolean }
+const { label, status, onSun, soon } = Astro.props;
+---
+<span class:list={[
+  'inline-flex items-center gap-2.5 min-h-[52px] pl-3.5 pr-[18px] py-2 rounded-md font-display text-[17px] font-bold leading-[1.1] tracking-[-.01em]',
+  onSun ? 'bg-on-sun text-sun' : 'bg-transparent text-ink shadow-[inset_0_0_0_1.5px_var(--line)]',
+  soon && 'opacity-70',
+]}>
+  <Icon name="dl" size={24} class={onSun ? undefined : 'text-accent'} />
+  <span>
+    <small class:list={['block font-body text-[11px] font-medium leading-[1.2] tracking-[.02em]', onSun ? 'text-store-sub' : 'text-ink-soft']}>{status}</small>
+    {label}
+  </span>
+</span>

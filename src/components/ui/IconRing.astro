@@ -1,0 +1,14 @@
+---
+// Ícono de línea dentro de un anillo accent de 2 px (56 px; sm: 40 px).
+import Icon from './Icon.astro';
+import type { IconName } from './icons';
+interface Props { name: IconName; size?: 'md' | 'sm'; class?: string }
+const { name, size = 'md', class: className } = Astro.props;
+---
+<span aria-hidden="true" class:list={[
+  'inline-grid place-items-center flex-none rounded-full text-accent shadow-[inset_0_0_0_2px_var(--accent)]',
+  size === 'sm' ? 'size-10' : 'size-14',
+  className,
+]}>
+  <Icon name={name} size={size === 'sm' ? 19 : 26} />
+</span>

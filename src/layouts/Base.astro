@@ -1,0 +1,48 @@
+---
+import '@fontsource/league-spartan/800.css';
+import '@fontsource/league-spartan/900.css';
+import '@fontsource/inter-tight/500.css';
+import '@fontsource/inter-tight/600.css';
+import '@fontsource/inter-tight/700.css';
+import '@fontsource/inter-tight/800.css';
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/600.css';
+import '@fontsource/ibm-plex-mono/500.css';
+import '../styles/global.css';
+import IconSprite from '../components/layout/IconSprite.astro';
+import Nav from '../components/layout/Nav.astro';
+import Footer from '../components/layout/Footer.astro';
+import { nav, login, cta } from '../data/site';
+
+interface Props { title: string; description: string; current?: string }
+const { title, description, current } = Astro.props;
+---
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#242424" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script is:inline>
+      try { if (localStorage.getItem('xidoo-theme') === 'light') document.documentElement.dataset.theme = 'light'; } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-sun focus:text-on-sun focus:px-4 focus:py-2 focus:rounded-full">Saltar al contenido</a>
+    <IconSprite />
+    <Nav links={nav} login={login} cta={cta} current={current} />
+    <main id="contenido">
+      <slot />
+    </main>
+    <Footer />
+    <script>
+      import '../scripts/reveal';
+    </script>
+  </body>
+</html>

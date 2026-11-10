@@ -1,0 +1,26 @@
+---
+// Botón en pastilla (componente Button del Design System).
+// sun: acción principal, una por pantalla · line: secundaria · dark: sobre la banda amarilla.
+interface Props {
+  href?: string;
+  variant?: 'sun' | 'line' | 'dark';
+  size?: 'md' | 'sm';
+  type?: 'button' | 'submit';
+  disabled?: boolean;
+  external?: boolean;
+  class?: string;
+}
+const { href, variant = 'sun', size = 'md', type = 'button', disabled, external, class: className } = Astro.props;
+
+const base = 'inline-flex items-center justify-center gap-1.5 border-0 cursor-pointer no-underline rounded-full font-body font-semibold leading-none transition-[transform,background-color,color,box-shadow] duration-200 active:scale-[.97] disabled:opacity-40 disabled:cursor-not-allowed';
+const sizes = { md: 'text-[15px] px-[22px] py-[13px]', sm: 'text-[13px] px-3.5 py-2' };
+const variants = {
+  sun: 'bg-sun text-on-sun hover:bg-sun-hover',
+  line: 'bg-transparent text-ink shadow-[inset_0_0_0_1.5px_var(--line)] hover:shadow-[inset_0_0_0_1.5px_var(--ink-soft)]',
+  dark: 'bg-on-sun text-sun',
+};
+const classes = [base, sizes[size], variants[variant], className];
+---
+{href
+  ? <a href={href} class:list={classes} target={external ? '_blank' : undefined} rel={external ? 'noopener' : undefined}><slot /></a>
+  : <button type={type} class:list={classes} disabled={disabled}><slot /></button>}

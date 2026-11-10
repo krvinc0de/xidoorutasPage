@@ -1,0 +1,43 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/ui/PageHead.astro';
+import Button from '../components/ui/Button.astro';
+import Field from '../components/ui/Field.astro';
+import Icon from '../components/ui/Icon.astro';
+import { contact } from '../data/pages';
+---
+<Base title={contact.meta.title} description={contact.meta.description} current="/contacto.html">
+  <section class="pt-16 pb-28" aria-labelledby="form-h">
+    <div class="wrap grid grid-cols-[1fr_1fr] gap-14 items-start max-[860px]:grid-cols-1 max-[860px]:gap-12">
+      <div class="grid gap-12">
+        <PageHead eyebrow={contact.eyebrow} title={contact.title} accent={contact.accent} lede={contact.lede} />
+        <ul class="reveal list-none m-0 p-0 border-t border-line">
+          {contact.channels.map((c) => (
+            <li class="grid grid-cols-[120px_1fr] gap-4 items-center min-h-tap py-3.5 border-b border-line">
+              <span class="font-mono text-xs font-medium tracking-[.06em] uppercase text-ink-soft">{c.label}</span>
+              {c.href
+                ? <a href={c.href} target="_blank" rel="noopener" class="inline-flex items-center gap-2 no-underline font-display text-lg font-semibold tracking-[-0.01em] hover:text-accent">{c.value}<Icon name="ext" size={16} class="text-accent" /></a>
+                : <span class="inline-flex items-center gap-2 font-display text-lg font-semibold tracking-[-0.01em]">{c.value}</span>}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <form class="reveal grid gap-3.5 rounded-lg bg-sun text-on-sun p-8 max-[520px]:p-5" data-demo-form data-success={contact.form.success} novalidate>
+        <h2 id="form-h" class="text-[32px] font-bold leading-[1.05] mb-1">{contact.form.title}</h2>
+        <Field id="ct-name" name="nombre" label="Tu nombre" placeholder="Ana López" autocomplete="name" required error="Escribe tu nombre para continuar." />
+        <div class="grid grid-cols-2 gap-3.5 max-[520px]:grid-cols-1">
+          <Field id="ct-phone" name="telefono" label="Tu celular" type="tel" placeholder="464 123 4567" autocomplete="tel" />
+          <Field id="ct-email" name="correo" label="Tu correo" type="email" placeholder="tu@correo.com" autocomplete="email" required error="Revisa tu correo, parece incompleto." />
+        </div>
+        <Field id="ct-subject" name="asunto" label="Asunto" placeholder="Cuéntanos en qué te ayudamos" multiline required error="Escribe tu mensaje para continuar." />
+        <Button type="submit" variant="dark" class="mt-1.5 py-4">Enviar</Button>
+        <p class="text-sm font-semibold min-h-[1.4em]" role="status" data-form-msg></p>
+      </form>
+    </div>
+  </section>
+</Base>
+
+<script>
+  import '../scripts/demo-form';
+</script>

@@ -1,0 +1,50 @@
+---
+// Recorrido de servicios: una línea de ruta vertical que se llena de amarillo con el scroll (RouteLine del DS).
+import SectionHead from '../ui/SectionHead.astro';
+import IconRing from '../ui/IconRing.astro';
+import { services } from '../../data/home';
+// El encabezado cambia por página (inicio, Aplicación); las paradas son siempre los cuatro servicios.
+interface Props { eyebrow?: string; title?: string; lede?: string }
+const { eyebrow = services.eyebrow, title = services.title, lede = services.lede } = Astro.props;
+const rail = 'absolute left-1/2 top-0 w-1.5 -ml-[3px] rounded-[3px] max-[760px]:left-[18px]';
+---
+<section class="pt-28" id="servicios" aria-labelledby="servicios-h">
+  <div class="wrap">
+    <SectionHead id="servicios-h" eyebrow={eyebrow} title={title} lede={lede} center />
+    <div class="relative grid gap-[120px] pb-10 max-[760px]:gap-20" data-journey>
+      <div class:list={[rail, 'bottom-0 bg-line']} aria-hidden="true"></div>
+      <div class:list={[rail, 'h-0 bg-sun']} data-rail-fill aria-hidden="true"></div>
+      <svg data-rail-bus viewBox="0 0 44 44" aria-hidden="true" class="absolute left-1/2 top-0 size-11 -ml-[22px] -mt-[22px] z-[2] will-change-transform max-[760px]:left-[18px]">
+        <circle cx="22" cy="22" r="22" fill="#FFBD59" />
+        <rect x="13" y="10" width="18" height="21" rx="4.5" fill="none" stroke="#1E1B12" stroke-width="2.8" />
+        <path d="M13 22h18M19 13.5h6" stroke="#1E1B12" stroke-width="2.8" stroke-linecap="round" />
+        <circle cx="17.5" cy="26.5" r="1.8" fill="#1E1B12" />
+        <circle cx="26.5" cy="26.5" r="1.8" fill="#1E1B12" />
+      </svg>
+
+      {services.items.map((s, i) => {
+        const flip = i % 2 === 1;
+        return (
+          <div class="stop-row relative grid grid-cols-[1fr_120px_1fr] items-center max-[760px]:grid-cols-[56px_1fr] max-[760px]:gap-y-7 max-[760px]:items-start" data-flip={flip ? '' : undefined}>
+            <div class:list={[
+              'reveal grid gap-3.5 max-w-[420px] row-start-1 max-[760px]:col-start-2 max-[760px]:justify-self-start max-[760px]:text-left',
+              flip ? 'col-start-3 justify-self-start text-left' : 'col-start-1 justify-self-end text-right',
+            ]}>
+              <IconRing name={s.icon} class={`mb-1 max-[760px]:justify-self-start ${flip ? 'justify-self-start' : 'justify-self-end'}`} />
+              <span class="font-mono text-xs font-medium leading-none tracking-[.06em] uppercase text-accent">{s.tag}</span>
+              <h3 class="text-[clamp(32px,4vw,44px)] font-bold leading-[1.02]">{s.title}</h3>
+              <p class="text-lg text-ink-soft">{s.text}</p>
+            </div>
+            <div class:list={[
+              'pic reveal row-start-1 [perspective:900px] max-[760px]:col-start-2 max-[760px]:row-start-2 max-[760px]:justify-self-start',
+              flip ? 'col-start-1 justify-self-end' : 'col-start-3 justify-self-start',
+            ]}>
+              <img src={s.img.src} width={s.img.width} height={s.img.height} alt={s.img.alt} loading="lazy" decoding="async"
+                class="block w-60 max-w-full h-auto will-change-[transform,opacity] max-[760px]:w-[200px]" />
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,84 @@
+/* Copia de tokens.css del Design System «Xidoo Rutas» (https://claude.ai/artifact/MXacJD8xAmBZvK3BXz9yUy).
+   No se edita aquí: cambia el valor en el Design System y vuelve a copiar este archivo. */
+:root, [data-theme="dark"] {
+  --bg: #242424;
+  --bg-raise: #2D2D2B;
+  --line: #3B3B38;
+  --ink: #F4F2EC;
+  --ink-soft: #A8A49A;
+  --ink-off: #55554F;
+  --accent: #FFBD59;
+  --sun: #FFBD59;
+  --sun-hover: #FFCB7D;
+  --on-sun: #1E1B12;
+  --r-blue: #3B8EF0;
+  --r-green: #6BC447;
+  --r-red: #EE5247;
+  --on-route: #141414;
+  --ok: #6BC447;
+  --warn: #FF8A3D;
+  --bad: #EE5247;
+  --info: #3B8EF0;
+  --on-bad: #FFFFFF;
+  --bad-soft: rgba(238,82,71,.1);
+  --st-ok: #9FE283;
+  --st-warn: #FFAA73;
+  --st-bad: #FF8F86;
+  --st-info: #93C2FF;
+  --st-ok-bg: rgba(107,196,71,.15);
+  --st-warn-bg: rgba(255,138,61,.15);
+  --st-bad-bg: rgba(238,82,71,.16);
+  --st-info-bg: rgba(59,142,240,.16);
+  --st-off-bg: rgba(168,164,154,.14);
+  --nav-bg: rgba(36,36,36,.74);
+  --bar: #1C1C1B;
+  --sk1: #343432;
+  --sk2: #3E3E3B;
+  --key: #6B6A64;
+  --toast-ic: #B07A1F;
+  --toast-act: #8A5A0E;
+  --toast-hover: rgba(0,0,0,.06);
+  --wm-stroke: #FFBD59;
+  --field: #FFF0D9;
+  --field-placeholder: #8C6A36;
+  --field-error: #B3261E;
+  --field-error-text: #8C1D18;
+  --store-sub: #E9DDC4;
+  --phone: #121212;
+}
+[data-theme="light"] {
+  --bg: #F7F4EE;
+  --bg-raise: #FFFFFF;
+  --line: #E2DCCF;
+  --ink: #1E1B12;
+  --ink-soft: #6B6559;
+  --ink-off: #C2BBAD;
+  --accent: #8A5300;
+  --st-ok: #2E7A10;
+  --st-warn: #A9470A;
+  --st-bad: #B42E27;
+  --st-info: #1C5FBF;
+  --nav-bg: rgba(247,244,238,.82);
+  --bar: #FFFFFF;
+  --sk1: #ECE7DD;
+  --sk2: #F7F4EE;
+  --key: #B7B0A2;
+  --toast-ic: #FFBD59;
+  --toast-act: #FFBD59;
+  --toast-hover: rgba(255,255,255,.08);
+  --wm-stroke: #1E1B12;
+  --phone: #E9E4DA;
+}
+:root {
+  --gutter: 20px;
+  --tap: 44px;
+  --max: 1120px;
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-pill: 999px;
+  --font-brand: "League Spartan", "Inter Tight", system-ui, sans-serif;
+  --font-display: "Inter Tight", "SF Pro Display", -apple-system, system-ui, sans-serif;
+  --font-body: "Inter", "SF Pro Text", -apple-system, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}

@@ -1,0 +1,18 @@
+---
+// Campo de formulario sobre la banda amarilla (FormField del Design System).
+// El error se marca con aria-invalid y un mensaje que explica qué corregir.
+interface Props {
+  id: string; name: string; label: string;
+  type?: 'text' | 'email' | 'tel'; placeholder?: string; autocomplete?: string;
+  required?: boolean; multiline?: boolean; error?: string;
+}
+const { id, name, label, type = 'text', placeholder, autocomplete, required, multiline, error } = Astro.props;
+const control = 'w-full font-body text-base font-medium px-[18px] py-[15px] rounded-md border-0 bg-field text-on-sun placeholder:text-field-placeholder focus-visible:outline-2 focus-visible:outline-on-sun focus-visible:outline-offset-2 aria-[invalid=true]:shadow-[inset_0_0_0_2px_var(--field-error)]';
+---
+<div class="grid gap-1.5 content-start" data-field>
+  <label class="font-body text-[13px] font-semibold" for={id}>{label}</label>
+  {multiline
+    ? <textarea class:list={[control, 'min-h-32 resize-y leading-normal']} id={id} name={name} placeholder={placeholder} required={required} aria-describedby={`${id}-err`} data-error={error}></textarea>
+    : <input class={control} id={id} name={name} type={type} placeholder={placeholder} autocomplete={autocomplete} required={required} aria-describedby={`${id}-err`} data-error={error} />}
+  <small id={`${id}-err`} class="text-[13px] text-field-error-text empty:hidden"></small>
+</div>

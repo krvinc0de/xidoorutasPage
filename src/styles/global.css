@@ -1,0 +1,123 @@
+/* Xidoo Rutas · estilos globales
+   Los valores salen de tokens.css (copia del Design System). Tailwind solo los expone como utilidades:
+   bg-bg-raise, text-accent, border-line, rounded-md, font-display… y cambian solos con data-theme. */
+@import "tailwindcss";
+@import "./tokens.css";
+
+@custom-variant light (&:where([data-theme="light"], [data-theme="light"] *));
+
+/* "reference": Tailwind no vuelve a declarar estas variables; las de tokens.css son las únicas. */
+@theme inline reference {
+  --color-*: initial;
+  --color-bg: var(--bg);
+  --color-bg-raise: var(--bg-raise);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-off: var(--ink-off);
+  --color-accent: var(--accent);
+  --color-sun: var(--sun);
+  --color-sun-hover: var(--sun-hover);
+  --color-on-sun: var(--on-sun);
+  --color-r-blue: var(--r-blue);
+  --color-r-green: var(--r-green);
+  --color-r-red: var(--r-red);
+  --color-on-route: var(--on-route);
+  --color-ok: var(--ok);
+  --color-warn: var(--warn);
+  --color-bad: var(--bad);
+  --color-info: var(--info);
+  --color-on-bad: var(--on-bad);
+  --color-nav-bg: var(--nav-bg);
+  --color-field: var(--field);
+  --color-field-placeholder: var(--field-placeholder);
+  --color-field-error: var(--field-error);
+  --color-field-error-text: var(--field-error-text);
+  --color-store-sub: var(--store-sub);
+  --color-wm-stroke: var(--wm-stroke);
+  --color-transparent: transparent;
+  --color-current: currentColor;
+
+  --font-*: initial;
+  --font-brand: var(--font-brand);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+
+  --radius-*: initial;
+  --radius-sm: var(--r-sm);
+  --radius-md: var(--r-md);
+  --radius-lg: var(--r-lg);
+  --radius-full: var(--r-pill);
+
+  --container-site: var(--max);
+  --spacing-tap: var(--tap);
+  --ease-xidoo: cubic-bezier(.22, .8, .24, 1);
+}
+
+@layer base {
+  :root { color-scheme: dark; }
+  :root[data-theme="light"] { color-scheme: light; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font: 400 17px/1.55 var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    transition: background-color .3s, color .3s;
+  }
+  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+  h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; letter-spacing: -0.03em; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+}
+
+/* Lo que no se expresa bien con utilidades: pseudoelementos, texto en contorno y estados de animación. */
+@layer components {
+  .wrap {
+    max-width: var(--max); margin-inline: auto;
+    padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
+    padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
+  }
+  .ic { width: 20px; height: 20px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* Línea de recorrido: parada sobre el riel */
+  .stop-row::before {
+    content: ""; position: absolute; left: 50%; top: 50%; width: 22px; height: 22px; margin: -11px 0 0 -11px;
+    border-radius: 50%; background: var(--bg); border: 5px solid var(--line); z-index: 1;
+    transition: border-color .4s, background-color .4s;
+  }
+  .stop-row.passed::before { border-color: var(--accent); background: var(--sun); }
+  @media (max-width: 760px) { .stop-row::before { left: 18px; top: 12px; margin-top: 0; } }
+
+  /* Patrón de contorno */
+  .wm span { color: transparent; -webkit-text-stroke: 1.5px var(--wm-stroke); }
+  .wm b { color: var(--sun); font-weight: 900; -webkit-text-stroke: 0 transparent; }
+  [data-theme="light"] .wm b { -webkit-text-stroke: 1.5px var(--wm-stroke); }
+
+  /* Botón de modo: sol en oscuro, luna en claro */
+  .theme-btn .ic-moon { display: none; }
+  [data-theme="light"] .theme-btn .ic-sun { display: none; }
+  [data-theme="light"] .theme-btn .ic-moon { display: block; }
+
+  /* Entrada al hacer scroll (sin JS todo queda visible) */
+  .js .reveal { transition: transform .9s var(--ease-xidoo), opacity .9s var(--ease-xidoo); }
+  .js .reveal:not(.in) { transform: translateY(36px); opacity: .25; }
+  .js .stop-row .pic.reveal:not(.in) { transform: translateY(56px) scale(.97); }
+  .gsap .stop-row .pic.reveal { transform: none !important; opacity: 1 !important; transition: none; }
+  .gsap .hero-shot { animation: none; }
+
+  /* Entrada al cargar */
+  .rise { animation: rise .9s var(--ease-xidoo) both; }
+  .draw path { stroke-dasharray: 1600; animation: draw 1.6s var(--ease-xidoo) both; }
+  .draw path:nth-child(2) { animation-delay: .1s; }
+  .draw path:nth-child(3) { animation-delay: .2s; }
+  .draw path:nth-child(4) { animation-delay: .3s; }
+}
+
+@keyframes rise { from { transform: translateY(18px); opacity: .2; } }
+@keyframes draw { from { stroke-dashoffset: 1600; } to { stroke-dashoffset: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before { animation: none !important; transition: none !important; }
+  .js .reveal:not(.in) { transform: none; opacity: 1; }
+  html { scroll-behavior: auto; }
+}

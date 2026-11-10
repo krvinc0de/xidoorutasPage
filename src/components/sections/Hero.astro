@@ -1,0 +1,22 @@
+---
+import Button from '../ui/Button.astro';
+import RouteStage from '../ui/RouteStage.astro';
+import { hero } from '../../data/home';
+---
+<section class="pt-16 pb-10 overflow-hidden" aria-labelledby="hero-h">
+  <div class="wrap grid grid-cols-[1.1fr_.9fr] gap-10 items-center max-[820px]:grid-cols-1">
+    <div class="relative z-[1] grid gap-[26px] justify-items-start">
+      <p class="rise font-body text-[13px] font-semibold leading-none tracking-[.1em] uppercase text-accent">{hero.eyebrow}</p>
+      <h1 id="hero-h" class="rise [animation-delay:.06s] text-[clamp(52px,8vw,104px)] font-extrabold leading-[.95] tracking-[-0.05em]">
+        <span class="block">{hero.title[0]}</span>
+        <span class="block text-accent">{hero.title[1]}</span>
+      </h1>
+      <p class="rise [animation-delay:.12s] text-[clamp(18px,2vw,21px)] leading-normal text-ink-soft max-w-[36ch]">{hero.lede}</p>
+      <div class="rise [animation-delay:.18s] flex gap-3 flex-wrap">
+        <Button href={hero.primary.href}>{hero.primary.label}</Button>
+        <Button href={hero.secondary.href} variant="line" external>{hero.secondary.label}</Button>
+      </div>
+    </div>
+    <RouteStage {...hero.shot} />
+  </div>
+</section>

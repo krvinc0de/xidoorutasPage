@@ -1,0 +1,18 @@
+---
+// Patrón de contorno: «RUTAS» en contorno y una sola «XIDOO» sólida; las filas se desplazan con el scroll.
+import { wordmark } from '../../data/home';
+const rows: { shift: number; brand?: boolean }[] = [{ shift: -1 }, { shift: 1 }, { shift: 0, brand: true }, { shift: -1 }, { shift: 1 }];
+---
+<section class="pt-[120px] overflow-hidden" aria-labelledby="wm-h" data-wordmark>
+  <h2 id="wm-h" class="sr-only">Xidoo Rutas · {wordmark.tag}</h2>
+  <div aria-hidden="true">
+    {rows.map((r) => (
+      <p class="wm w-max [transform:translateX(-50%)] ml-[50%] flex justify-center gap-[.28em] whitespace-nowrap font-brand text-[clamp(60px,12.5vw,172px)] leading-[.9] font-black uppercase will-change-transform" data-shift={r.shift}>
+        {r.brand
+          ? <><span>Rutas</span><span>Rutas</span><b>Xidoo</b><span>Rutas</span><span>Rutas</span></>
+          : Array.from({ length: 6 }, () => <span>Rutas</span>)}
+      </p>
+    ))}
+  </div>
+  <p class="text-center mt-[30px] font-mono text-[15px] font-medium tracking-[.06em] text-ink-soft">{wordmark.tag}</p>
+</section>

@@ -1,0 +1,10 @@
+---
+// Encabezado de sección: etiqueta en mayúsculas (accent) sobre un título corto.
+interface Props { eyebrow: string; title: string; lede?: string; center?: boolean; id?: string }
+const { eyebrow, title, lede, center, id } = Astro.props;
+---
+<div class:list={['reveal grid gap-3.5 mb-16 max-w-[760px]', center && 'text-center mx-auto justify-items-center']}>
+  <p class="font-body text-[13px] font-semibold leading-none tracking-[.1em] uppercase text-accent">{eyebrow}</p>
+  <h2 id={id} class="text-[clamp(38px,5.8vw,64px)] font-bold leading-[1.02]">{title}</h2>
+  {lede && <p class="text-[19px] max-w-[52ch] text-ink-soft">{lede}</p>}
+</div>

@@ -1,0 +1,27 @@
+---
+// Cambio de modo claro / oscuro. El sitio abre en oscuro y recuerda la elección (localStorage «xidoo-theme»).
+import Icon from './Icon.astro';
+---
+<button type="button" data-theme-toggle aria-label="Cambiar a modo claro" aria-pressed="false"
+  class="theme-btn grid place-items-center size-10 flex-none border-0 rounded-full cursor-pointer bg-transparent text-ink-soft shadow-[inset_0_0_0_1.5px_var(--line)] transition-[color,box-shadow] duration-200 hover:text-ink hover:shadow-[inset_0_0_0_1.5px_var(--ink-soft)]">
+  <Icon name="sun" class="ic-sun" />
+  <Icon name="night" class="ic-moon" />
+</button>
+
+<script>
+  const root = document.documentElement;
+  const sync = (btn: HTMLElement) => {
+    const light = root.dataset.theme === 'light';
+    btn.setAttribute('aria-label', light ? 'Cambiar a modo oscuro' : 'Cambiar a modo claro');
+    btn.setAttribute('aria-pressed', String(light));
+  };
+  document.querySelectorAll<HTMLElement>('[data-theme-toggle]').forEach((btn) => {
+    sync(btn);
+    btn.addEventListener('click', () => {
+      const light = root.dataset.theme !== 'light';
+      if (light) root.dataset.theme = 'light'; else delete root.dataset.theme;
+      try { localStorage.setItem('xidoo-theme', light ? 'light' : 'dark'); } catch {}
+      document.querySelectorAll<HTMLElement>('[data-theme-toggle]').forEach(sync);
+    });
+  });
+</script>
