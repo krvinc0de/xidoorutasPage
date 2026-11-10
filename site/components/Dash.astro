@@ -1,0 +1,30 @@
+---
+import Logo from './Logo.astro';
+const year = new Date().getFullYear();
+---
+<footer class="dash">
+  <div class="wrap dash-in">
+    <a class="brand" href="/" aria-label="Xidoo Rutas, inicio"><Logo /><b>Xidoo<br />Rutas</b></a>
+    <nav aria-label="Pie de página">
+      <ul>
+        <li><a href="empresa.html">Empresa</a></li>
+        <li><a href="aplicacion.html">Aplicación</a></li>
+        <li><a href="desarrolladores.html">Nosotros</a></li>
+        <li><a href="Actualizaciones.html">Actualizaciones</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="proximamente.html">Negocios</a></li>
+      </ul>
+    </nav>
+    <p class="dash-tag marker">#ConectandoLaCiudad</p>
+    <p class="dash-legal">© 2020–{year} Xidoo Rutas · Hecha en Salamanca, Guanajuato.</p>
+  </div>
+</footer>
+<style>
+  .dash-in { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 20px 40px; padding-block: 40px 32px; }
+  .dash ul { display: flex; flex-wrap: wrap; gap: 6px 24px; }
+  .dash nav a { display: inline-flex; min-height: 44px; align-items: center; color: var(--ink-soft); text-decoration: none; font: 700 1.05rem/1 var(--display); text-transform: uppercase; letter-spacing: 0.06em; }
+  .dash nav a:hover { color: var(--ink); }
+  .dash-tag { color: var(--sun); font-size: 1.15rem; }
+  .dash-legal { grid-column: 1 / -1; padding-top: 20px; border-top: 1px solid var(--edge); color: var(--ink-soft); font-size: 0.9rem; }
+  @media (max-width: 760px) { .dash-in { grid-template-columns: 1fr; } }
+</style>

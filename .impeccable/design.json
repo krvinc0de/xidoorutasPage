@@ -1,0 +1,559 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-10T08:24:58+00:00",
+  "title": "Design System: Xidoo Rutas",
+  "extensions": {
+    "colorMeta": {
+      "glass": {
+        "role": "neutral",
+        "displayName": "Vidrio",
+        "canonical": "#0e1412",
+        "tonalRamp": [
+          "#0a0c0b",
+          "#222625",
+          "#3d4441",
+          "#5c6361",
+          "#7d8482",
+          "#a0a7a4",
+          "#c5cac9",
+          "#ecefee"
+        ]
+      },
+      "glass-2": {
+        "role": "neutral",
+        "displayName": "Vidrio alto",
+        "canonical": "#151d1a",
+        "tonalRamp": [
+          "#090c0b",
+          "#212624",
+          "#3c4441",
+          "#5a6460",
+          "#7b8581",
+          "#9ea7a4",
+          "#c4cbc8",
+          "#ecefee"
+        ]
+      },
+      "glass-3": {
+        "role": "neutral",
+        "displayName": "Vidrio claro",
+        "canonical": "#1d2824",
+        "tonalRamp": [
+          "#090c0b",
+          "#202724",
+          "#3a4541",
+          "#586560",
+          "#798681",
+          "#9ca8a4",
+          "#c3cbc8",
+          "#ebf0ee"
+        ]
+      },
+      "edge": {
+        "role": "neutral",
+        "displayName": "Canto del vidrio",
+        "canonical": "#2b3a35",
+        "tonalRamp": [
+          "#080c0b",
+          "#1f2724",
+          "#384541",
+          "#556560",
+          "#768781",
+          "#9aa9a4",
+          "#c1ccc8",
+          "#eaf0ee"
+        ]
+      },
+      "strip-a": {
+        "role": "neutral",
+        "displayName": "Franja polarizada",
+        "canonical": "#0c3a3f",
+        "tonalRamp": [
+          "#040d0f",
+          "#11292c",
+          "#23494d",
+          "#3e696f",
+          "#5f8b90",
+          "#86adb2",
+          "#b3cfd3",
+          "#e2f2f4"
+        ]
+      },
+      "strip-b": {
+        "role": "neutral",
+        "displayName": "Franja polarizada baja",
+        "canonical": "#08201f",
+        "tonalRamp": [
+          "#060d0c",
+          "#1a2827",
+          "#314745",
+          "#4e6765",
+          "#6e8887",
+          "#93aba9",
+          "#bccdcc",
+          "#e7f1f0"
+        ]
+      },
+      "rubber": {
+        "role": "neutral",
+        "displayName": "Empaque de hule",
+        "canonical": "#050706",
+        "tonalRamp": [
+          "#0a0b0b",
+          "#242625",
+          "#404341",
+          "#5e6260",
+          "#7f8381",
+          "#a2a6a4",
+          "#c7cac8",
+          "#edefee"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Vinil blanco",
+        "canonical": "#f3f1ea",
+        "tonalRamp": [
+          "#0c0b0a",
+          "#262522",
+          "#43423d",
+          "#63615b",
+          "#84827c",
+          "#a7a59f",
+          "#cac9c5",
+          "#efeeec"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Vinil gris",
+        "canonical": "#a9b8b1",
+        "tonalRamp": [
+          "#090c0a",
+          "#202724",
+          "#3a4540",
+          "#57655f",
+          "#788680",
+          "#9ba9a2",
+          "#c2ccc7",
+          "#eaf0ed"
+        ]
+      },
+      "sun": {
+        "role": "primary",
+        "displayName": "Amarillo Xidoo",
+        "canonical": "#ffbd59",
+        "tonalRamp": [
+          "#170700",
+          "#3c1c00",
+          "#663400",
+          "#8d5200",
+          "#b17400",
+          "#d29941",
+          "#eac289",
+          "#ffebcb"
+        ],
+        "note": "Fijo de marca: no se ajusta."
+      },
+      "naranja": {
+        "role": "secondary",
+        "displayName": "Naranja fosforescente",
+        "canonical": "#ff7a2e",
+        "tonalRamp": [
+          "#1f0100",
+          "#4d0300",
+          "#800900",
+          "#ae2d00",
+          "#d55400",
+          "#f67f41",
+          "#ffb289",
+          "#ffe2cb"
+        ]
+      },
+      "verde": {
+        "role": "secondary",
+        "displayName": "Verde fosforescente",
+        "canonical": "#8ce05a",
+        "tonalRamp": [
+          "#001000",
+          "#013000",
+          "#035200",
+          "#237600",
+          "#489900",
+          "#73bc47",
+          "#a7db8d",
+          "#dbf9cd"
+        ]
+      },
+      "rosa": {
+        "role": "secondary",
+        "displayName": "Rosa fosforescente",
+        "canonical": "#ff70b2",
+        "tonalRamp": [
+          "#1e000d",
+          "#4b0029",
+          "#7d0048",
+          "#a91b69",
+          "#d1468a",
+          "#f273ad",
+          "#ffa9cf",
+          "#ffddf2"
+        ]
+      },
+      "carton": {
+        "role": "neutral",
+        "displayName": "Cartulina blanca",
+        "canonical": "#f4efe2",
+        "tonalRamp": [
+          "#0c0b08",
+          "#27251f",
+          "#454238",
+          "#656156",
+          "#878276",
+          "#a9a59a",
+          "#ccc9c1",
+          "#f0eeea"
+        ]
+      },
+      "tinta": {
+        "role": "neutral",
+        "displayName": "Plumón negro",
+        "canonical": "#17140f",
+        "tonalRamp": [
+          "#0c0b09",
+          "#272521",
+          "#45423c",
+          "#64615a",
+          "#86827b",
+          "#a8a49e",
+          "#cbc9c4",
+          "#f0eeec"
+        ]
+      },
+      "tinta-soft": {
+        "role": "neutral",
+        "displayName": "Plumón gastado",
+        "canonical": "#4a4337",
+        "tonalRamp": [
+          "#0d0b08",
+          "#28241e",
+          "#474136",
+          "#686054",
+          "#898174",
+          "#aba498",
+          "#cec8bf",
+          "#f1eee9"
+        ]
+      },
+      "plumon-rojo": {
+        "role": "tertiary",
+        "displayName": "Rojo de plumón",
+        "canonical": "#c8231a",
+        "tonalRamp": [
+          "#210000",
+          "#520000",
+          "#890000",
+          "#b80404",
+          "#e14032",
+          "#ff7160",
+          "#ffa99a",
+          "#ffddd3"
+        ]
+      },
+      "cinta": {
+        "role": "neutral",
+        "displayName": "Cinta",
+        "canonical": "rgba(236, 226, 196, 0.62)",
+        "tonalRamp": [
+          "#0d0b05",
+          "#2a2516",
+          "#49422b",
+          "#6a6146",
+          "#8b8266",
+          "#ada58b",
+          "#cfc9b7",
+          "#f2eee4"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Letra pintada grande",
+        "purpose": "Titular de la cartulina principal, uno por página."
+      },
+      "headline": {
+        "displayName": "Vinil recortado",
+        "purpose": "Títulos de sección sobre el vidrio."
+      },
+      "headline-painted": {
+        "displayName": "Letra pintada de título",
+        "purpose": "Títulos dentro de una cartulina (paneles, cierre, letrero de redes)."
+      },
+      "title": {
+        "displayName": "Letra pintada de letrero",
+        "purpose": "Letreros de destino, pestañas, nombres del tarjetón y paradas del itinerario."
+      },
+      "body": {
+        "displayName": "Texto",
+        "purpose": "Texto corrido y entradillas, 44 a 60ch."
+      },
+      "label": {
+        "displayName": "Vinil de etiqueta",
+        "purpose": "Navegación, botones de redes, fechas y banda del tarjetón."
+      },
+      "marker": {
+        "displayName": "Plumón",
+        "purpose": "Notas a mano, pies de foto y listas cortas. Nunca párrafos ni títulos."
+      }
+    },
+    "shadows": [
+      {
+        "name": "board-shadow",
+        "value": "0 14px 28px -14px rgba(0, 0, 0, 0.75), 0 2px 4px rgba(0, 0, 0, 0.35)",
+        "purpose": "Toda cartulina, aviso y tarjetón en reposo."
+      },
+      {
+        "name": "board-lifted",
+        "value": "0 18px 30px -14px rgba(0, 0, 0, 0.8)",
+        "purpose": "Letrero de destino en hover."
+      },
+      {
+        "name": "sign-selected",
+        "value": "0 26px 38px -14px rgba(0, 0, 0, 0.9), 0 4px 8px rgba(0, 0, 0, 0.4)",
+        "purpose": "Pestaña seleccionada, adelantada y derecha."
+      },
+      {
+        "name": "sign-stowed",
+        "value": "0 3px 6px -3px rgba(0, 0, 0, 0.6)",
+        "purpose": "Pestaña no seleccionada, pegada al vidrio."
+      },
+      {
+        "name": "tape",
+        "value": "0 1px 2px rgba(0, 0, 0, 0.15)",
+        "purpose": "Cinta adhesiva sobre la cartulina."
+      },
+      {
+        "name": "vinyl-text",
+        "value": "text-shadow: 0 1px 0 rgba(0, 0, 0, 0.45)",
+        "purpose": "Títulos de vinil sobre el vidrio."
+      },
+      {
+        "name": "focus-ring",
+        "value": "outline: 3px solid var(--sun); outline-offset: 3px; box-shadow: 0 0 0 7px var(--glass)",
+        "purpose": "Foco visible global."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Hover y levantar."
+      },
+      {
+        "name": "settle",
+        "value": "cubic-bezier(0.3, 1.25, 0.5, 1)",
+        "purpose": "Asentar una cartulina con un leve vaivén."
+      },
+      {
+        "name": "place",
+        "value": "0.7s settle; from translate 0 -14px, rotate tilt + 2.2deg",
+        "purpose": "Entrada de cartulinas, escalonada con --d."
+      },
+      {
+        "name": "lift",
+        "value": "0.22s ease-out; to translate 0 -18px, rotate -2.5deg, opacity 0",
+        "purpose": "Quitar el letrero actual al cambiar de pestaña."
+      },
+      {
+        "name": "drop",
+        "value": "0.62s settle; from translate 0 -26px, rotate 3deg",
+        "purpose": "Colocar el letrero nuevo al cambiar de pestaña."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce → sin animación",
+        "purpose": "El cambio es inmediato."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "itinerary-vertical",
+        "value": "1000px"
+      },
+      {
+        "name": "crew-3",
+        "value": "960px"
+      },
+      {
+        "name": "nav-menu",
+        "value": "900px"
+      },
+      {
+        "name": "single-column",
+        "value": "860px"
+      },
+      {
+        "name": "dash-stack",
+        "value": "760px"
+      },
+      {
+        "name": "crew-2",
+        "value": "560px"
+      },
+      {
+        "name": "itinerary-compact",
+        "value": "480px"
+      }
+    ],
+    "grain": {
+      "value": "SVG feTurbulence fractalNoise 0.9, 3 octaves, alpha 0.42",
+      "blend": "soft-light",
+      "size": "180px",
+      "purpose": "Grano neutro en toda cartulina."
+    },
+    "tape": {
+      "properties": [
+        "--t1-x",
+        "--t1-y",
+        "--t1-w",
+        "--t1-r",
+        "--t2-x",
+        "--t2-y",
+        "--t2-w",
+        "--t2-r"
+      ],
+      "purpose": "Cada cartulina define su propio par de cintas."
+    }
+  },
+  "components": [
+    {
+      "name": "Botón de red social",
+      "kind": "button",
+      "refersTo": "button-social",
+      "description": "La acción principal: seguir el proyecto en redes. Va sobre una cartulina.",
+      "html": "<a class=\"ds-social\" href=\"#\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"3.5\" y=\"3.5\" width=\"17\" height=\"17\" rx=\"5\"/><circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M17.2 6.8h.01\"/></svg>Instagram<small>@xidoorutas</small></a>",
+      "css": ":host{--glass:#0e1412;--ink:#f3f1ea;--sun:#ffbd59;--naranja:#ff7a2e;--verde:#8ce05a;--rosa:#ff70b2;--carton:#f4efe2;--tinta:#17140f;--tinta-soft:#4a4337;--plumon-rojo:#c8231a;--cinta:rgba(236,226,196,.62);--display:'Big Shoulders Display','Arial Narrow',sans-serif;--painted:'Londrina Solid','Big Shoulders Display',sans-serif;--body:'Atkinson Hyperlegible',system-ui,sans-serif;--marker:'Permanent Marker','Comic Sans MS',cursive;--ease-out:cubic-bezier(0.16,1,0.3,1);--settle:cubic-bezier(0.3,1.25,0.5,1);--board-shadow:0 14px 28px -14px rgba(0,0,0,.75),0 2px 4px rgba(0,0,0,.35);} :focus-visible{outline:3px solid var(--sun);outline-offset:3px;box-shadow:0 0 0 7px var(--glass);} .ds-social{display:flex;align-items:center;gap:12px;min-height:56px;padding:0 18px;max-width:340px;background:var(--tinta);color:var(--carton);border-radius:6px;text-decoration:none;font:800 1.35rem/1 var(--display);text-transform:uppercase;letter-spacing:.04em;transition:background-color .2s,translate .2s var(--ease-out);} .ds-social svg{width:24px;height:24px;flex:none;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;} .ds-social small{margin-left:auto;font:400 .95rem/1 var(--body);text-transform:none;letter-spacing:0;color:#c9c2b0;} .ds-social:hover{background:#2e281e;translate:0 -2px;} .ds-social:active{translate:0 1px;}"
+    },
+    {
+      "name": "Letrero de destino",
+      "kind": "custom",
+      "refersTo": "sign-destination",
+      "description": "Cartulina fluorescente de servicio en el primer vistazo; lleva al panel del servicio.",
+      "html": "<a class=\"ds-board ds-dest\" href=\"#\" style=\"--c:#ff7a2e;--tilt:-1.6deg\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"6\" cy=\"18\" r=\"2.2\"/><circle cx=\"18\" cy=\"6\" r=\"2.2\"/><path d=\"M8.2 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.8\"/></svg>Rutas y horarios</a>",
+      "css": ":host{--glass:#0e1412;--ink:#f3f1ea;--sun:#ffbd59;--naranja:#ff7a2e;--verde:#8ce05a;--rosa:#ff70b2;--carton:#f4efe2;--tinta:#17140f;--tinta-soft:#4a4337;--plumon-rojo:#c8231a;--cinta:rgba(236,226,196,.62);--display:'Big Shoulders Display','Arial Narrow',sans-serif;--painted:'Londrina Solid','Big Shoulders Display',sans-serif;--body:'Atkinson Hyperlegible',system-ui,sans-serif;--marker:'Permanent Marker','Comic Sans MS',cursive;--ease-out:cubic-bezier(0.16,1,0.3,1);--settle:cubic-bezier(0.3,1.25,0.5,1);--board-shadow:0 14px 28px -14px rgba(0,0,0,.75),0 2px 4px rgba(0,0,0,.35);} :focus-visible{outline:3px solid var(--sun);outline-offset:3px;box-shadow:0 0 0 7px var(--glass);} .ds-board{position:relative;background:var(--c,var(--sun));color:var(--tinta);border-radius:3px 6px 4px 7px;box-shadow:var(--board-shadow);rotate:var(--tilt,0deg);} .ds-dest{display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:10px 20px 8px;font:900 1.5rem/1 var(--painted);text-transform:uppercase;text-decoration:none;transition:translate .25s var(--ease-out),box-shadow .25s;} .ds-dest svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;} .ds-dest:hover{translate:0 -3px;box-shadow:0 18px 30px -14px rgba(0,0,0,.8);}"
+    },
+    {
+      "name": "Pestaña de letrero",
+      "kind": "chip",
+      "refersTo": "sign-tab",
+      "description": "Pestaña del cambiador de letreros; la elegida se adelanta y se endereza.",
+      "html": "<div class=\"ds-tabs\"><button class=\"ds-board ds-sel\" aria-selected=\"true\" style=\"--c:#ff7a2e;--tilt:-1.2deg\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"6\" cy=\"18\" r=\"2.2\"/><circle cx=\"18\" cy=\"6\" r=\"2.2\"/><path d=\"M8.2 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.8\"/></svg>Rutas y horarios</button><button class=\"ds-board ds-sel\" aria-selected=\"false\" style=\"--c:#8ce05a;--tilt:.9deg\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2.5v4M10.2 4.3h3.6\"/><path d=\"M7 21V11l5-4 5 4v10\"/><path d=\"M7 14l-4 2v5M17 14l4 2v5\"/><path d=\"M10 21v-3.5a2 2 0 0 1 4 0V21M2 21h20\"/></svg>Ruta Cultural</button></div>",
+      "css": ":host{--glass:#0e1412;--ink:#f3f1ea;--sun:#ffbd59;--naranja:#ff7a2e;--verde:#8ce05a;--rosa:#ff70b2;--carton:#f4efe2;--tinta:#17140f;--tinta-soft:#4a4337;--plumon-rojo:#c8231a;--cinta:rgba(236,226,196,.62);--display:'Big Shoulders Display','Arial Narrow',sans-serif;--painted:'Londrina Solid','Big Shoulders Display',sans-serif;--body:'Atkinson Hyperlegible',system-ui,sans-serif;--marker:'Permanent Marker','Comic Sans MS',cursive;--ease-out:cubic-bezier(0.16,1,0.3,1);--settle:cubic-bezier(0.3,1.25,0.5,1);--board-shadow:0 14px 28px -14px rgba(0,0,0,.75),0 2px 4px rgba(0,0,0,.35);} :focus-visible{outline:3px solid var(--sun);outline-offset:3px;box-shadow:0 0 0 7px var(--glass);} .ds-board{position:relative;background:var(--c,var(--sun));color:var(--tinta);border-radius:3px 6px 4px 7px;box-shadow:var(--board-shadow);rotate:var(--tilt,0deg);} .ds-tabs{display:grid;gap:14px;max-width:300px;} .ds-sel{display:flex;align-items:center;gap:12px;min-height:64px;padding:12px 18px 10px;border:0;cursor:pointer;text-align:left;font:900 1.6rem/1 var(--painted);text-transform:uppercase;color:var(--tinta);transition:translate .25s var(--ease-out),box-shadow .25s,rotate .25s;} .ds-sel svg{width:24px;height:24px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;} .ds-sel[aria-selected='false']{box-shadow:0 3px 6px -3px rgba(0,0,0,.6);rotate:calc(var(--tilt) - 1.5deg);} .ds-sel[aria-selected='false']:hover{box-shadow:var(--board-shadow);} .ds-sel[aria-selected='true']{translate:16px -4px;rotate:0deg;box-shadow:0 26px 38px -14px rgba(0,0,0,.9),0 4px 8px rgba(0,0,0,.4);}"
+    },
+    {
+      "name": "Cartulina principal",
+      "kind": "card",
+      "refersTo": "board-main",
+      "description": "El letrero amarillo con el titular pintado, pegado con cinta.",
+      "html": "<div class=\"ds-wrap\"><div class=\"ds-board ds-tape ds-main\" style=\"--tilt:-1deg\"><h1>Las rutas de Salamanca</h1><p>Rutas, horarios, paradas y costos del transporte público.</p></div></div>",
+      "css": ":host{--glass:#0e1412;--ink:#f3f1ea;--sun:#ffbd59;--naranja:#ff7a2e;--verde:#8ce05a;--rosa:#ff70b2;--carton:#f4efe2;--tinta:#17140f;--tinta-soft:#4a4337;--plumon-rojo:#c8231a;--cinta:rgba(236,226,196,.62);--display:'Big Shoulders Display','Arial Narrow',sans-serif;--painted:'Londrina Solid','Big Shoulders Display',sans-serif;--body:'Atkinson Hyperlegible',system-ui,sans-serif;--marker:'Permanent Marker','Comic Sans MS',cursive;--ease-out:cubic-bezier(0.16,1,0.3,1);--settle:cubic-bezier(0.3,1.25,0.5,1);--board-shadow:0 14px 28px -14px rgba(0,0,0,.75),0 2px 4px rgba(0,0,0,.35);} .ds-board{position:relative;background:var(--c,var(--sun));color:var(--tinta);border-radius:3px 6px 4px 7px;box-shadow:var(--board-shadow);rotate:var(--tilt,0deg);} .ds-tape::before,.ds-tape::after{content:'';position:absolute;height:24px;background:var(--cinta);box-shadow:0 1px 2px rgba(0,0,0,.15);clip-path:polygon(0 8%,6% 0,94% 4%,100% 0,97% 52%,100% 100%,4% 94%,0 100%,3% 48%);} .ds-tape::before{top:-11px;left:18px;width:74px;rotate:-6deg;} .ds-tape::after{top:-10px;right:20px;width:70px;rotate:5deg;} .ds-wrap{background:var(--glass);padding:40px 24px;} .ds-main{padding:40px 36px 32px;max-width:520px;} .ds-main h1{margin:0;font:900 3.6rem/.9 var(--painted);text-transform:uppercase;max-width:11ch;} .ds-main p{margin:18px 0 0;font:400 1.1rem/1.45 var(--body);color:#2b2418;max-width:44ch;}"
+    },
+    {
+      "name": "Letrero de cartulina blanca con nota",
+      "kind": "card",
+      "refersTo": "board-carton",
+      "description": "Cartulina blanca con título pintado y nota en plumón rojo.",
+      "html": "<div class=\"ds-wrap\"><aside class=\"ds-board ds-tape ds-carton\" style=\"--c:#f4efe2;--tilt:1.3deg\"><h2>Síguenos y entérate cuando salga</h2><p class=\"ds-note\">Todavía no se puede descargar.</p></aside></div>",
+      "css": ":host{--glass:#0e1412;--ink:#f3f1ea;--sun:#ffbd59;--naranja:#ff7a2e;--verde:#8ce05a;--rosa:#ff70b2;--carton:#f4efe2;--tinta:#17140f;--tinta-soft:#4a4337;--plumon-rojo:#c8231a;--cinta:rgba(236,226,196,.62);--display:'Big Shoulders Display','Arial Narrow',sans-serif;--painted:'Londrina Solid','Big Shoulders Display',sans-serif;--body:'Atkinson Hyperlegible',system-ui,sans-serif;--marker:'Permanent Marker','Comic Sans MS',cursive;--ease-out:cubic-bezier(0.16,1,0.3,1);--settle:cubic-bezier(0.3,1.25,0.5,1);--board-shadow:0 14px 28px -14px rgba(0,0,0,.75),0 2px 4px rgba(0,0,0,.35);} .ds-board{position:relative;background:var(--c,var(--sun));color:var(--tinta);border-radius:3px 6px 4px 7px;box-shadow:var(--board-shadow);rotate:var(--tilt,0deg);} .ds-tape::before,.ds-tape::after{content:'';position:absolute;height:24px;background:var(--cinta);box-shadow:0 1px 2px rgba(0,0,0,.15);clip-path:polygon(0 8%,6% 0,94% 4%,100% 0,97% 52%,100% 100%,4% 94%,0 100%,3% 48%);} .ds-tape::before{top:-11px;left:18px;width:74px;rotate:-6deg;} .ds-tape::after{top:-10px;right:20px;width:70px;rotate:5deg;} .ds-wrap{background:var(--glass);padding:40px 24px;} .ds-carton{padding:34px 28px 26px;max-width:380px;} .ds-carton h2{margin:0 0 14px;font:900 2.3rem/.95 var(--painted);text-transform:uppercase;} .ds-note{margin:-6px 0 0;font:400 1.12rem/1.3 var(--marker);color:var(--plumon-rojo);rotate:-1.5deg;}"
+    },
+    {
+      "name": "Navegación en franja polarizada",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Vínculos en vinil sobre la franja polarizada; el actual en amarillo.",
+      "html": "<nav class=\"ds-strip\"><a href=\"#\">Empresa</a><a href=\"#\" aria-current=\"page\">Aplicación</a><a href=\"#\">Contacto</a></nav>",
+      "css": ":host{--glass:#0e1412;--ink:#f3f1ea;--sun:#ffbd59;--naranja:#ff7a2e;--verde:#8ce05a;--rosa:#ff70b2;--carton:#f4efe2;--tinta:#17140f;--tinta-soft:#4a4337;--plumon-rojo:#c8231a;--cinta:rgba(236,226,196,.62);--display:'Big Shoulders Display','Arial Narrow',sans-serif;--painted:'Londrina Solid','Big Shoulders Display',sans-serif;--body:'Atkinson Hyperlegible',system-ui,sans-serif;--marker:'Permanent Marker','Comic Sans MS',cursive;--ease-out:cubic-bezier(0.16,1,0.3,1);--settle:cubic-bezier(0.3,1.25,0.5,1);--board-shadow:0 14px 28px -14px rgba(0,0,0,.75),0 2px 4px rgba(0,0,0,.35);} :focus-visible{outline:3px solid var(--sun);outline-offset:3px;box-shadow:0 0 0 7px var(--glass);} .ds-strip{display:flex;gap:28px;padding:0 24px;min-height:64px;align-items:center;background:linear-gradient(180deg,#0c3a3f,#08201f);border-bottom:1px solid rgba(255,255,255,.06);} .ds-strip a{display:inline-flex;align-items:center;min-height:44px;font:700 1.05rem/1 var(--display);text-transform:uppercase;letter-spacing:.06em;color:rgba(243,241,234,.78);text-decoration:none;transition:color .2s;} .ds-strip a:hover{color:var(--ink);} .ds-strip a[aria-current='page']{color:var(--sun);}"
+    },
+    {
+      "name": "Tarjetón del operador",
+      "kind": "card",
+      "refersTo": "id-card",
+      "description": "Gafete del equipo: banda amarilla, foto, nombre pintado y puesto.",
+      "html": "<a class=\"ds-id\" href=\"#\"><span class=\"ds-id-head\">Xidoo Rutas · Operador</span><span class=\"ds-id-photo\"></span><b>Kevin Medina</b><span class=\"ds-id-role\">Programador</span></a>",
+      "css": ":host{--glass:#0e1412;--ink:#f3f1ea;--sun:#ffbd59;--naranja:#ff7a2e;--verde:#8ce05a;--rosa:#ff70b2;--carton:#f4efe2;--tinta:#17140f;--tinta-soft:#4a4337;--plumon-rojo:#c8231a;--cinta:rgba(236,226,196,.62);--display:'Big Shoulders Display','Arial Narrow',sans-serif;--painted:'Londrina Solid','Big Shoulders Display',sans-serif;--body:'Atkinson Hyperlegible',system-ui,sans-serif;--marker:'Permanent Marker','Comic Sans MS',cursive;--ease-out:cubic-bezier(0.16,1,0.3,1);--settle:cubic-bezier(0.3,1.25,0.5,1);--board-shadow:0 14px 28px -14px rgba(0,0,0,.75),0 2px 4px rgba(0,0,0,.35);} :focus-visible{outline:3px solid var(--sun);outline-offset:3px;box-shadow:0 0 0 7px var(--glass);} .ds-id{display:grid;gap:6px;width:200px;padding:0 0 16px;background:var(--carton);color:var(--tinta);text-decoration:none;border-radius:6px;box-shadow:var(--board-shadow);rotate:-2deg;transition:translate .25s var(--ease-out);} .ds-id:hover{translate:0 -4px;} .ds-id-head{padding:9px 12px 7px;background:var(--sun);border-radius:6px 6px 0 0;font:800 .82rem/1 var(--display);text-transform:uppercase;letter-spacing:.08em;} .ds-id-photo{display:block;margin:8px 12px 4px;aspect-ratio:1;background:#4a4337;border-radius:3px;} .ds-id b{padding-inline:12px;font:900 1.35rem/1 var(--painted);text-transform:uppercase;} .ds-id-role{padding-inline:12px;font:400 .92rem/1.4 var(--body);color:var(--tinta-soft);}"
+    },
+    {
+      "name": "Título en vinil",
+      "kind": "custom",
+      "refersTo": "headline",
+      "description": "Título de sección en vinil blanco sobre el vidrio, con entradilla gris.",
+      "html": "<div class=\"ds-glass\"><h2 class=\"ds-vinyl\">¿Para dónde vas?</h2><p>Tres servicios en una sola app.</p></div>",
+      "css": ":host{--glass:#0e1412;--ink:#f3f1ea;--sun:#ffbd59;--naranja:#ff7a2e;--verde:#8ce05a;--rosa:#ff70b2;--carton:#f4efe2;--tinta:#17140f;--tinta-soft:#4a4337;--plumon-rojo:#c8231a;--cinta:rgba(236,226,196,.62);--display:'Big Shoulders Display','Arial Narrow',sans-serif;--painted:'Londrina Solid','Big Shoulders Display',sans-serif;--body:'Atkinson Hyperlegible',system-ui,sans-serif;--marker:'Permanent Marker','Comic Sans MS',cursive;--ease-out:cubic-bezier(0.16,1,0.3,1);--settle:cubic-bezier(0.3,1.25,0.5,1);--board-shadow:0 14px 28px -14px rgba(0,0,0,.75),0 2px 4px rgba(0,0,0,.35);} .ds-glass{background:radial-gradient(120% 80% at 50% 0%,#151d1a,#0e1412 70%);padding:40px 24px;} .ds-vinyl{margin:0;font:800 3.4rem/.92 var(--display);text-transform:uppercase;letter-spacing:-.01em;color:var(--ink);text-shadow:0 1px 0 rgba(0,0,0,.45);} .ds-glass p{margin:14px 0 0;font:400 1.15rem/1.55 var(--body);color:#a9b8b1;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Letreros de parabrisas",
+    "overview": "La página es el parabrisas de un camión de Salamanca. El fondo es vidrio laminado oscuro y verdoso, con una franja polarizada arriba donde va la navegación en vinil recortado. Todo lo que se tiene que leer de un vistazo va en cartulinas fluorescentes pegadas detrás del vidrio con cinta: el letrero principal en amarillo Xidoo y los de destino en naranja, verde y rosa. Las notas van en plumón, los avisos impresos y los tarjetones del operador se pegan al vidrio y el texto corrido es Atkinson Hyperlegible.\n\nLa densidad es de letrero: pocas palabras y muy grandes. Cada cartulina es un objeto físico con su propio ángulo, su propia cinta y su sombra que la separa del vidrio. Nada flota sin razón. Si algo no está pegado al vidrio, es vinil sobre el vidrio (títulos de sección, navegación) o es el tablero del camión (pie de página).\n\nEl movimiento tiene una sola gramática: la cartulina **se coloca**. Cae desde unos píxeles arriba con un pequeño giro extra y se asienta en su ángulo, como cuando el chofer cambia el letrero. El sistema respeta `prefers-reduced-motion` y quita toda animación.",
+    "keyCharacteristics": [
+      "Vidrio oscuro verdoso como único fondo, con un reflejo diagonal tenue.",
+      "Cartulinas fluorescentes inclinadas (entre -1.6° y 2.2°), pegadas con cinta translúcida.",
+      "Cuatro voces tipográficas con papeles fijos: vinil, letra pintada, texto, plumón.",
+      "Amarillo Xidoo y el logo del camión como marca fija.",
+      "Un solo gesto de movimiento: colocar y asentar."
+    ],
+    "rules": [
+      {
+        "name": "La Regla del Color por Servicio",
+        "body": "Naranja es Rutas, verde es Cultural, rosa es Negocios. Un color fluorescente no se usa para otra cosa.",
+        "section": "colors"
+      },
+      {
+        "name": "La Regla del Plumón Sobre Cartulina",
+        "body": "El texto sobre cartulina siempre es `tinta` o `tinta-soft`; el texto sobre vidrio siempre es `ink` o `ink-soft`. Nunca texto claro sobre cartulina.",
+        "section": "colors"
+      },
+      {
+        "name": "La Regla de las Cuatro Voces",
+        "body": "Vinil para lo que está sobre el vidrio, letra pintada para lo que está en la cartulina, Atkinson para leer, plumón para anotar. No se intercambian.",
+        "section": "typography"
+      },
+      {
+        "name": "La Regla del Plumón Corto",
+        "body": "Permanent Marker sólo lleva frases cortas (una línea o dos). Nunca un párrafo ni un título.",
+        "section": "typography"
+      },
+      {
+        "name": "La Regla de la Sombra Difusa",
+        "body": "Las sombras siempre son suaves, caen hacia abajo y tienen difuminado negativo. Nunca una sombra dura desplazada: esto es cartón pegado a un vidrio, no un recorte de papel sobre una mesa.",
+        "section": "elevation"
+      },
+      {
+        "name": "La Regla del Grano",
+        "body": "Toda cartulina lleva el ruido neutro `--grain` con `background-blend-mode: soft-light` a 180px. El vidrio no lleva grano.",
+        "section": "elevation"
+      },
+      {
+        "name": "La Regla de la Cinta Propia",
+        "body": "Cada cartulina define su par de cintas con `--t1-*` y `--t2-*` (posición, largo, ángulo). Ningún par de cintas se repite entre letreros vecinos.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "**Do** poner cada título de sección en vinil (`headline`) sobre el vidrio y cada titular dentro de una cartulina en letra pintada (`display` o `headline-painted`).",
+      "**Do** darle a cada cartulina nueva su propio `--tilt` (entre -1.6° y 2.2°) y su propio par de cintas `--t1-*`/`--t2-*`.",
+      "**Do** mantener el color de cada servicio: naranja Rutas, verde Cultural, rosa Negocios.",
+      "**Do** usar `--board-shadow` para todo lo que está pegado al vidrio, y el grano `soft-light` en toda cartulina.",
+      "**Do** animar sólo con el gesto de colocar y asentar (`--settle`), y quitarlo con `prefers-reduced-motion`.",
+      "**Do** usar el amarillo Xidoo y el logo del camión sin alterarlos.",
+      "**Do** dibujar los íconos como trazo SVG en cuadrícula de 24 con grosor 1.9 a 2."
+    ],
+    "donts": [
+      "**Don't** poner texto claro sobre cartulina ni texto oscuro sobre el vidrio.",
+      "**Don't** usar sombras duras desplazadas; las cartulinas se separan del vidrio con sombra difusa.",
+      "**Don't** escribir párrafos o títulos en Permanent Marker.",
+      "**Don't** usar un color fluorescente fuera de su servicio ni cambiar el tono del amarillo Xidoo.",
+      "**Don't** inventar otra animación (deslizar, desvanecer, rebotar en escala) fuera de colocar y asentar.",
+      "**Don't** usar emoji ni glifos tipográficos como íconos."
+    ]
+  }
+}

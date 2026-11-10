@@ -1,0 +1,484 @@
+---
+import Base from '../layouts/Base.astro';
+
+const redes = [
+  { href: 'https://www.instagram.com/xidoorutas/', icon: 'i-instagram', label: 'Instagram', handle: '@xidoorutas' },
+  { href: 'https://www.facebook.com/XidooRutas', icon: 'i-facebook', label: 'Facebook', handle: 'XidooRutas' },
+  { href: 'https://twitter.com/RutasXidoo', icon: 'i-x', label: 'X', handle: '@RutasXidoo' },
+];
+
+const servicios = [
+  {
+    id: 'rutas',
+    color: 'naranja',
+    icon: 'i-route',
+    title: 'Rutas y horarios',
+    text: 'Consulta las rutas del transporte público salmantino: por dónde pasan, a qué hora, en qué paradas y cuánto cuesta el pasaje.',
+    notes: ['Rutas sobre el mapa', 'Horarios y paradas', 'Costo del pasaje'],
+    img: '/img/app-rutas.png', w: 282, h: 556,
+    alt: 'Pantalla del prototipo con cuatro rutas de colores sobre el mapa del centro de Salamanca y la colonia Bellavista',
+  },
+  {
+    id: 'cultural',
+    color: 'verde',
+    icon: 'i-church',
+    title: 'Ruta Cultural',
+    text: 'Los sitios más emblemáticos de la ciudad y los eventos culturales del momento, para que vuelvas a recorrer Salamanca con otros ojos.',
+    notes: ['Sitios emblemáticos', 'Eventos culturales', 'En el mismo mapa'],
+    img: '/img/app-cultural.png', w: 264, h: 519,
+    alt: 'Pantalla del prototipo con marcadores de sitios culturales sobre el mapa del centro de Salamanca',
+  },
+  {
+    id: 'negocios',
+    color: 'rosa',
+    icon: 'i-store',
+    title: 'Publicidad Local',
+    text: 'Si tienes un negocio en Salamanca, podrás darlo a conocer con su propio perfil dentro de la app.',
+    notes: ['Perfil de tu negocio', 'Para comercios de aquí'],
+    pending: 'El registro para negocios todavía no abre.',
+    img: '/img/app-negocios.png', w: 213, h: 421,
+    alt: 'Pantalla del prototipo con la sección de negocios locales',
+  },
+];
+
+const itinerario = [
+  { dt: '2020-09', t: 'Sep 2020', b: 'La idea', s: 'Nace como proyecto escolar y crece más allá de una app de rutas.' },
+  { dt: '2020-12', t: 'Dic 2020', b: 'Primera presentación', s: 'Mucha gente se interesa y nos da su apoyo.' },
+  { dt: '2021-01', t: 'Ene 2021', b: 'Empieza el desarrollo', s: 'Bocetos, interfaces, modelado y la primera página.' },
+  { dt: '2021-06', t: 'Jun 2021', b: 'Primer prototipo', s: 'Las primeras funciones, ya en el celular.' },
+  { dt: '2021-11', t: 'Nov 2021', b: '2.º lugar nacional', s: 'CONIES 2021, edición Tamaulipas, emprendimiento tecnológico, frente a 100 universidades.', hl: true },
+  { dt: '2021-12', t: 'Dic 2021', b: 'Exposición', s: 'Mostramos al público el avance de los prototipos.' },
+  { dt: '2022-04', t: 'Abr 2022', b: 'Versión de prueba', s: 'El público prueba la app y la plataforma web.' },
+  { dt: '2026-11', t: 'Nov 2026', b: 'De regreso', s: 'Relanzamos Xidoo Rutas.', now: true },
+];
+
+const equipo = [
+  { n: 'Kevin Medina', f: 'kevin', p: 'devs/kevindev.html', tilt: -2 },
+  { n: 'Gael Razo', f: 'gael', p: 'devs/gaeldev.html', tilt: 1.5 },
+  { n: 'Luis Reyes', f: 'luis', p: 'devs/luisdev.html', tilt: -1 },
+  { n: 'Tadeo Vega', f: 'tadeo', p: 'devs/tadeodev.html', tilt: 2.2 },
+  { n: 'Brandon García', f: 'brandon', p: 'devs/brandondev.html', tilt: -1.6 },
+];
+---
+<Base
+  title="Xidoo Rutas · Las rutas de Salamanca, en tu celular"
+  description="Rutas, horarios, paradas y costos del transporte público de Salamanca, más la Ruta Cultural y los negocios de la ciudad. Hecha en Salamanca, por salmantinos."
+>
+  <!-- Parabrisas: primer vistazo -->
+  <section class="hero" aria-labelledby="h1">
+    <div class="wrap hero-grid">
+      <div class="board board-main tape placed" style="--tilt:-1deg">
+        <h1 id="h1">Las rutas de Salamanca,<br /> en&nbsp;tu&nbsp;celular.</h1>
+        <p class="lede">Rutas, horarios, paradas y costos del transporte público, más la Ruta Cultural y los negocios de la ciudad. Hecha en Salamanca, por salmantinos.</p>
+        <p class="sticker" style="--tilt:8deg">
+          <span class="st-big">2.º lugar</span><span class="st-mid">nacional</span><span class="st-small">CONIES 2021</span>
+        </p>
+      </div>
+
+      <aside class="board board-carton tape follow placed" style="--tilt:1.3deg; --d:.14s" aria-labelledby="follow-h">
+        <h2 id="follow-h">Síguenos y entérate cuando salga</h2>
+        <p class="marker follow-note">Estamos relanzando la app. Todavía no se puede descargar.</p>
+        <div class="socials">
+          {redes.map((r) => (
+            <a class="social" href={r.href} target="_blank" rel="noopener">
+              <svg aria-hidden="true"><use href={`#${r.icon}`} /></svg>{r.label}<small>{r.handle}</small>
+            </a>
+          ))}
+        </div>
+        <a class="video-link" href="#video"><svg aria-hidden="true"><use href="#i-play" /></svg>Ver el video del proyecto</a>
+      </aside>
+
+
+      <ul class="destinos" aria-label="Lo que trae la app">
+        {servicios.map((s, i) => (
+          <li>
+            <a class={`board board-${s.color} dest placed`} style={`--tilt:${[-1.6, 1.1, -0.6][i]}deg; --d:${0.2 + i * 0.07}s`} href={`#s-${s.id}`} data-dest={s.id}>
+              <svg aria-hidden="true"><use href={`#${s.icon}`} /></svg>{s.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Los letreros: se cambian como en el camión -->
+  <section class="sec destinos-sec" id="destinos" aria-labelledby="destinos-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="destinos-h" class="vinyl">¿Para dónde vas?</h2>
+        <p class="sec-lede">Tres servicios en una sola app. Toca un letrero para cambiarlo.</p>
+      </div>
+      <div class="swap">
+        <div class="selector" data-selector>
+          {servicios.map((s, i) => (
+            <button type="button" class={`board board-${s.color} sel`} id={`t-${s.id}`} data-tab={s.id} style={`--tilt:${[-1.2, 0.9, -0.5][i]}deg`}>
+              <svg aria-hidden="true"><use href={`#${s.icon}`} /></svg><span>{s.title}</span>
+            </button>
+          ))}
+        </div>
+        <div class="panels">
+          {servicios.map((s) => (
+            <article class={`board board-${s.color} panel`} id={`s-${s.id}`} data-panel={s.id} aria-labelledby={`p-${s.id}-h`}>
+              <div class="panel-copy">
+                <h3 id={`p-${s.id}-h`}>{s.title}</h3>
+                <p>{s.text}</p>
+                <ul class="notes">
+                  {s.notes.map((n) => <li class="marker">{n}</li>)}
+                </ul>
+                {s.pending && (
+                  <p class="pending">{s.pending} <a href="contacto.html">Escríbenos</a> y te avisamos.</p>
+                )}
+              </div>
+              <figure class="notice tape">
+                <img src={s.img} width={s.w} height={s.h} alt={s.alt} loading="lazy" decoding="async" />
+                <figcaption class="marker">Prototipo de 2021</figcaption>
+              </figure>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Itinerario: la trayectoria como lista de paradas -->
+  <section class="sec" id="trayectoria" aria-labelledby="tray-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="tray-h" class="vinyl">De proyecto escolar a segundo lugar nacional</h2>
+        <p class="sec-lede">Cada parada del recorrido, desde 2020. <a href="empresa.html">Lee la historia completa</a>.</p>
+      </div>
+      <ol class="board board-carton tape itinerary" style="--tilt:-0.4deg">
+        {itinerario.map((p) => (
+          <li class:list={[{ hl: p.hl, now: p.now }]}>
+            <time datetime={p.dt}>{p.t}</time>
+            <b>{p.b}</b>
+            <span>{p.s}</span>
+            {p.now && <em class="marker">Aquí vamos</em>}
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- Tarjetones del operador -->
+  <section class="sec" id="equipo" aria-labelledby="equipo-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="equipo-h" class="vinyl">La hacen cinco salmantinos</h2>
+        <p class="sec-lede">Empezamos como estudiantes de la UTS y seguimos al volante. <a href="desarrolladores.html">Conoce al equipo</a>.</p>
+      </div>
+      <ul class="crew">
+        {equipo.map((m) => (
+          <li style={`--tilt:${m.tilt}deg`}>
+            <a class="id-card tape" href={m.p}>
+              <span class="id-head">Xidoo Rutas · Operador</span>
+              <img src={`/img/equipo/${m.f}.jpg`} width="360" height="360" alt="" loading="lazy" decoding="async" />
+              <b>{m.n}</b>
+              <span class="id-role">Programador</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Cierre: video y redes -->
+  <section class="sec close" id="video" aria-labelledby="close-h">
+    <div class="wrap close-grid">
+      <figure class="board board-carton tape video-board" style="--tilt:-0.8deg">
+        <button class="yt" type="button" data-yt="yP6a73tT6c8" aria-label="Reproducir el video de Xidoo Rutas">
+          <img src="https://i.ytimg.com/vi/yP6a73tT6c8/hqdefault.jpg" width="480" height="360" alt="" loading="lazy" decoding="async" />
+          <span class="yt-play"><svg aria-hidden="true"><use href="#i-play" /></svg></span>
+        </button>
+        <figcaption class="marker">El video del proyecto</figcaption>
+      </figure>
+      <div class="board board-main tape close-board" style="--tilt:1deg">
+        <h2 id="close-h">Súbete desde ahora</h2>
+        <p>Te avisamos en redes cuando la app esté lista para descargar, y antes te enseñamos cómo va.</p>
+        <div class="socials">
+          {redes.map((r) => (
+            <a class="social" href={r.href} target="_blank" rel="noopener">
+              <svg aria-hidden="true"><use href={`#${r.icon}`} /></svg>{r.label}<small>{r.handle}</small>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script>
+  // Letreros intercambiables: progresivo. Sin JS se ven los tres paneles.
+  const selector = document.querySelector<HTMLElement>('[data-selector]');
+  const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-tab]'));
+  const panels = Array.from(document.querySelectorAll<HTMLElement>('[data-panel]'));
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+
+  if (selector && tabs.length) {
+    document.documentElement.classList.add('js-swap');
+    selector.setAttribute('role', 'tablist');
+    selector.setAttribute('aria-label', 'Servicios');
+    tabs.forEach((t) => {
+      t.setAttribute('role', 'tab');
+      t.setAttribute('aria-controls', `s-${t.dataset.tab}`);
+    });
+    panels.forEach((p) => {
+      p.setAttribute('role', 'tabpanel');
+      p.setAttribute('tabindex', '0');
+      p.setAttribute('aria-labelledby', `t-${p.dataset.panel}`);
+    });
+
+    let current = '';
+    const select = (id: string, focus = false) => {
+      if (id === current) return;
+      const prev = panels.find((p) => p.dataset.panel === current);
+      const next = panels.find((p) => p.dataset.panel === id);
+      if (!next) return;
+      tabs.forEach((t) => {
+        const on = t.dataset.tab === id;
+        t.setAttribute('aria-selected', String(on));
+        t.tabIndex = on ? 0 : -1;
+        if (on && focus) t.focus();
+      });
+      if (prev && !reduce.matches) {
+        prev.classList.add('leaving');
+        prev.addEventListener('animationend', () => { prev.hidden = true; prev.classList.remove('leaving'); }, { once: true });
+      } else if (prev) {
+        prev.hidden = true;
+      }
+      panels.forEach((p) => { if (p !== next && p !== prev) p.hidden = true; });
+      next.hidden = false;
+      next.classList.remove('arriving');
+      if (prev && !reduce.matches) { void next.offsetWidth; next.classList.add('arriving'); }
+      current = id;
+    };
+
+    select(tabs[0].dataset.tab!);
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => select(t.dataset.tab!));
+      t.addEventListener('keydown', (e) => {
+        const d = e.key === 'ArrowDown' || e.key === 'ArrowRight' ? 1 : e.key === 'ArrowUp' || e.key === 'ArrowLeft' ? -1 : 0;
+        if (e.key === 'Home' || e.key === 'End') {
+          e.preventDefault();
+          select(tabs[e.key === 'Home' ? 0 : tabs.length - 1].dataset.tab!, true);
+        } else if (d) {
+          e.preventDefault();
+          select(tabs[(i + d + tabs.length) % tabs.length].dataset.tab!, true);
+        }
+      });
+    });
+
+    // Los letreros del parabrisas eligen el servicio antes de bajar.
+    document.querySelectorAll<HTMLAnchorElement>('[data-dest]').forEach((a) => {
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        select(a.dataset.dest!);
+        document.getElementById('destinos')?.scrollIntoView({ behavior: reduce.matches ? 'auto' : 'smooth' });
+        history.replaceState(null, '', '#destinos');
+      });
+    });
+  }
+
+  // Video: se carga solo al tocarlo.
+  document.querySelectorAll<HTMLButtonElement>('[data-yt]').forEach((b) => {
+    b.addEventListener('click', () => {
+      const f = document.createElement('iframe');
+      f.src = `https://www.youtube-nocookie.com/embed/${b.dataset.yt}?autoplay=1&rel=0`;
+      f.title = 'Video de Xidoo Rutas';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture';
+      f.allowFullscreen = true;
+      f.className = 'yt-frame';
+      b.replaceWith(f);
+    });
+  });
+</script>
+
+<style>
+  /* ---------- Parabrisas ---------- */
+  .hero { padding-block: clamp(36px, 5vw, 64px) clamp(56px, 7vw, 96px); }
+  .hero-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 4.4fr);
+    grid-template-areas: 'main follow' 'dest dest';
+    column-gap: clamp(24px, 3.5vw, 56px);
+    row-gap: 28px;
+    align-items: start;
+  }
+  .board-main { grid-area: main; padding: clamp(28px, 3.6vw, 52px) clamp(24px, 3.4vw, 48px) clamp(28px, 3.4vw, 44px); }
+  .hero h1 { font-family: var(--painted); font-size: clamp(3.3rem, 7.2vw, 6rem); font-weight: 900; line-height: 0.9; letter-spacing: 0; max-width: 11ch; }
+  .board-main { --t1-x: 14px; --t1-w: 92px; --t1-r: -8deg; --t2-x: 34px; --t2-w: 58px; --t2-r: 3deg; }
+  .lede { margin-top: clamp(18px, 2.2vw, 28px); font-size: clamp(1.05rem, 1.4vw, 1.25rem); line-height: 1.45; max-width: 44ch; color: #2b2418; }
+
+  .follow { grid-area: follow; padding: 34px clamp(20px, 2.4vw, 32px) 26px; margin-top: clamp(10px, 4vw, 56px); }
+  .follow-note { margin: -6px 0 18px; color: var(--plumon-rojo); font-size: 1.12rem; line-height: 1.3; rotate: -1.5deg; max-width: 26ch; padding-left: 4px; }
+  .follow { --t1-x: 40%; --t1-y: -13px; --t1-w: 88px; --t1-r: 2deg; --t2-x: -8px; --t2-y: 14px; --t2-w: 50px; --t2-r: 48deg; }
+  .follow h2 { font-family: var(--painted); font-weight: 900; line-height: 0.95; margin: 0 0 14px; font-size: clamp(2rem, 2.8vw, 2.6rem); }
+  .video-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: 12px; color: var(--tinta); font-weight: 700; }
+  .video-link svg { width: 18px; height: 18px; fill: currentColor; }
+
+  .sticker {
+    position: absolute; z-index: 3;
+    right: clamp(-64px, -4vw, -40px); top: -26px; rotate: var(--tilt);
+    display: grid; place-content: center; justify-items: center;
+    width: clamp(104px, 11vw, 140px); aspect-ratio: 1; border-radius: 50%;
+    background: var(--ink); color: var(--tinta);
+    box-shadow: inset 0 0 0 5px var(--ink), inset 0 0 0 7px var(--tinta), 0 8px 16px -8px rgba(0, 0, 0, 0.7);
+    text-align: center; text-transform: uppercase; font-family: var(--display); line-height: 0.9;
+  }
+  .st-big { font-size: clamp(1.35rem, 1.9vw, 1.8rem); font-weight: 900; }
+  .st-mid { font-size: clamp(0.95rem, 1.2vw, 1.1rem); font-weight: 800; }
+  .st-small { margin-top: 4px; font: 700 0.75rem/1 var(--body); letter-spacing: 0.04em; }
+
+  .destinos { grid-area: dest; display: flex; flex-wrap: wrap; gap: 14px 18px; }
+  .dest {
+    display: inline-flex; align-items: center; gap: 10px; min-height: 56px; padding: 10px 20px 8px;
+    font: 900 clamp(1.3rem, 1.7vw, 1.6rem)/1 var(--painted); text-transform: uppercase; text-decoration: none;
+    transition: translate 0.25s var(--ease-out), box-shadow 0.25s;
+  }
+  .dest svg, .sel svg { width: 24px; height: 24px; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .dest:hover { translate: 0 -3px; box-shadow: 0 18px 30px -14px rgba(0, 0, 0, 0.8); }
+
+  @media (max-width: 860px) {
+    .hero-grid { grid-template-columns: 1fr; grid-template-areas: 'main' 'follow' 'dest'; }
+    .follow { margin-top: 0; }
+    .board-main { padding-bottom: 72px; }
+    .follow { margin-top: 36px; }
+    .sticker { top: auto; right: 10px; bottom: -48px; width: 124px; line-height: 1; gap: 2px; }
+    .st-big { font-size: 1.3rem; }
+    .st-mid { font-size: 1rem; }
+    .st-small { margin-top: 3px; }
+  }
+
+  /* ---------- Secciones ---------- */
+  .sec { padding-block: clamp(72px, 9vw, 128px) 0; }
+  .close { padding-bottom: clamp(72px, 9vw, 128px); }
+  .sec-head { display: grid; gap: 14px; margin-bottom: clamp(32px, 4vw, 52px); max-width: 820px; }
+  .sec-head h2 { font-size: clamp(2.6rem, 5.6vw, 4.6rem); }
+  .sec-lede { color: var(--ink-soft); font-size: 1.15rem; max-width: 60ch; }
+  .sec-lede a { color: var(--ink); }
+
+  /* ---------- Letreros intercambiables ---------- */
+  .swap { display: grid; grid-template-columns: minmax(220px, 3fr) minmax(0, 8fr); gap: clamp(24px, 3vw, 44px); align-items: start; }
+  .selector { display: grid; gap: 14px; }
+  .sel {
+    display: flex; align-items: center; gap: 12px; min-height: 64px; padding: 12px 18px 10px; border: 0; cursor: pointer; text-align: left;
+    font: 900 clamp(1.4rem, 1.9vw, 1.7rem)/1 var(--painted); text-transform: uppercase; color: var(--tinta);
+    transition: translate 0.25s var(--ease-out), box-shadow 0.25s, rotate 0.25s;
+  }
+  :global(.js-swap) .sel[aria-selected='false'] { box-shadow: 0 3px 6px -3px rgba(0, 0, 0, 0.6); rotate: calc(var(--tilt) - 1.5deg); }
+  :global(.js-swap) .sel[aria-selected='false']:hover { box-shadow: var(--board-shadow); }
+  :global(.js-swap) .sel[aria-selected='true'] { translate: 16px -4px; rotate: 0deg; box-shadow: 0 26px 38px -14px rgba(0, 0, 0, 0.9), 0 4px 8px rgba(0, 0, 0, 0.4); }
+
+  .panels { display: grid; gap: 28px; }
+  :global(.js-swap) .panels { grid-template-areas: 'p'; }
+  :global(.js-swap) .panel { grid-area: p; }
+  .panel {
+    --tilt: 0.6deg;
+    display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: clamp(20px, 3vw, 44px); align-items: center;
+    padding: clamp(26px, 3.4vw, 48px);
+  }
+  .panel[hidden] { display: none; }
+  .panel h3 { font-family: var(--painted); font-size: clamp(2.8rem, 5vw, 4.4rem); font-weight: 900; line-height: 0.92; }
+  .panel-copy > p { margin-top: 16px; font-size: 1.15rem; max-width: 46ch; color: #2b2418; }
+  .notes { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 22px; }
+  .notes li { font-size: 1.2rem; line-height: 1.2; }
+  .notes li::before { content: ''; display: inline-block; width: 0.8em; height: 0.8em; margin-right: 8px; border: 2.5px solid currentColor; border-radius: 50%; vertical-align: -0.05em; }
+  .pending { margin-top: 22px; padding-top: 16px; border-top: 2px dashed rgba(23, 20, 15, 0.35); font-weight: 700; max-width: 46ch; }
+
+  .notice { position: relative; margin: 0; padding: 10px 10px 12px; background: var(--carton); rotate: -2.5deg; box-shadow: var(--board-shadow); }
+  .notice img { width: clamp(150px, 15vw, 210px); height: auto; border-radius: 2px; }
+  .notice figcaption { margin-top: 8px; text-align: center; font-size: 0.95rem; color: var(--tinta-soft); }
+  .notice { --t1-x: 38%; --t1-w: 64px; --t1-r: -4deg; }
+  .notice::after { display: none; }
+
+  .panel:global(.leaving) { animation: lift 0.22s var(--ease-out) both; }
+  .panel:global(.arriving) { animation: drop 0.62s var(--settle) both; }
+  @keyframes lift { to { translate: 0 -18px; rotate: -2.5deg; opacity: 0; } }
+  @keyframes drop {
+    from { translate: 0 -26px; rotate: 3deg; opacity: 0; }
+    35% { opacity: 1; }
+    to { translate: 0 0; rotate: var(--tilt); opacity: 1; }
+  }
+
+  @media (max-width: 860px) {
+    .swap { grid-template-columns: 1fr; }
+    .selector { display: flex; flex-wrap: wrap; gap: 12px; }
+    .sel { min-height: 54px; font-size: 1.3rem; }
+    :global(.js-swap) .sel[aria-selected='true'] { translate: 0 -2px; }
+    .panel { grid-template-columns: 1fr; }
+    .notice { justify-self: center; }
+  }
+
+  /* ---------- Itinerario ---------- */
+  .itinerary {
+    display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 0;
+    padding: clamp(32px, 3.6vw, 48px) clamp(20px, 2.6vw, 36px) clamp(28px, 3vw, 40px);
+  }
+  .itinerary li { position: relative; display: grid; align-content: start; gap: 8px; padding: 36px 14px 0 0; }
+  .itinerary li::before { content: ''; position: absolute; top: 9px; left: 0; right: 0; height: 6px; background: var(--tinta); }
+  .itinerary li:last-child::before { right: auto; width: 22px; }
+  .itinerary li::after { content: ''; position: absolute; top: 2px; left: 0; width: 20px; height: 20px; border-radius: 50%; background: var(--carton); border: 5px solid var(--tinta); }
+  .itinerary time { font: 800 1.2rem/1 var(--display); text-transform: uppercase; letter-spacing: 0.04em; color: var(--tinta-soft); font-variant-numeric: tabular-nums; }
+  .itinerary b { font: 900 1.4rem/1 var(--painted); text-transform: uppercase; }
+  .itinerary span { font-size: 0.95rem; line-height: 1.4; color: #3a3326; }
+  .itinerary li.hl::after { background: var(--sun); }
+  .itinerary li.hl b { background: var(--sun); box-decoration-break: clone; -webkit-box-decoration-break: clone; padding: 2px 5px 0; margin-left: -5px; justify-self: start; }
+  .itinerary li.now::after { background: var(--naranja); }
+  .itinerary li.now::before { background: repeating-linear-gradient(90deg, var(--tinta) 0 8px, transparent 8px 14px); right: 0; width: auto; }
+  .itinerary em { color: var(--plumon-rojo); font-style: normal; font-size: 1.1rem; rotate: -3deg; justify-self: start; }
+
+  @media (max-width: 1000px) {
+    .itinerary { grid-template-columns: 1fr; }
+    .itinerary li { grid-template-columns: 108px 1fr; column-gap: 16px; padding: 0 0 26px 40px; }
+    .itinerary li::before { top: 0; bottom: 0; left: 7px; right: auto; width: 6px; height: auto; }
+    .itinerary li:last-child::before { bottom: auto; height: 22px; width: 6px; }
+    .itinerary li.now::before { background: repeating-linear-gradient(180deg, var(--tinta) 0 8px, transparent 8px 14px); height: 22px; width: 6px; }
+    .itinerary li::after { top: 0; }
+    .itinerary time { grid-row: span 3; padding-top: 3px; }
+    .itinerary b, .itinerary span, .itinerary em { grid-column: 2; }
+  }
+  @media (max-width: 480px) {
+    .itinerary li { grid-template-columns: 1fr; }
+    .itinerary time { grid-row: auto; }
+    .itinerary b, .itinerary span, .itinerary em { grid-column: 1; }
+  }
+
+  /* ---------- Tarjetones ---------- */
+  .crew { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: clamp(16px, 2.2vw, 32px); padding-top: 14px; }
+  .crew li { rotate: var(--tilt); }
+  .id-card {
+    position: relative; display: grid; gap: 6px; padding: 0 0 16px; overflow: visible;
+    background: var(--carton); color: var(--tinta); text-decoration: none; border-radius: 6px; box-shadow: var(--board-shadow);
+    transition: translate 0.25s var(--ease-out);
+  }
+  .id-card:hover { translate: 0 -4px; }
+  .id-card::after { display: none; }
+  .id-card { --t1-x: -18px; --t1-y: calc(100% - 26px); --t1-w: 60px; --t1-r: 38deg; }
+  .crew li:nth-child(even) .id-card { --t1-x: auto; --t1-r: -36deg; }
+  .crew li:nth-child(even) .id-card::before { left: auto; right: -18px; }
+  .id-head { padding: 9px 12px 7px; background: var(--sun); border-radius: 6px 6px 0 0; font: 800 0.82rem/1 var(--display); text-transform: uppercase; letter-spacing: 0.08em; }
+  .id-card img { width: calc(100% - 24px); margin: 8px 12px 4px; aspect-ratio: 1; object-fit: cover; border-radius: 3px; filter: saturate(0.9); }
+  .id-card b { padding-inline: 12px; font: 900 1.35rem/1 var(--painted); text-transform: uppercase; }
+  .id-role { padding-inline: 12px; font-size: 0.92rem; color: var(--tinta-soft); }
+  @media (max-width: 960px) { .crew { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 560px) { .crew { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+  /* ---------- Cierre ---------- */
+  .close-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(24px, 4vw, 64px); align-items: center; }
+  .video-board { margin: 0; padding: 12px 12px 14px; }
+  .video-board figcaption { margin-top: 10px; text-align: center; color: var(--tinta-soft); }
+  .yt { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; padding: 0; border: 0; cursor: pointer; background: var(--tinta); overflow: hidden; border-radius: 2px; }
+  .yt img { width: 100%; height: 100%; object-fit: cover; opacity: 0.88; transition: opacity 0.25s, scale 0.4s var(--ease-out); }
+  .yt:hover img { opacity: 1; scale: 1.02; }
+  .yt-play { position: absolute; inset: 0; margin: auto; display: grid; place-items: center; width: 84px; height: 84px; border-radius: 50%; background: var(--sun); color: var(--tinta); box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.8); }
+  .yt-play svg { width: 34px; height: 34px; fill: currentColor; translate: 3px 0; }
+  .video-board :global(.yt-frame) { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; }
+  .close-board { grid-area: auto; }
+  .close-board h2 { font-family: var(--painted); font-size: clamp(2.8rem, 4.8vw, 4.2rem); font-weight: 900; line-height: 0.92; }
+  .close-board { --t1-x: 22px; --t1-w: 66px; --t1-r: 4deg; --t2-x: 46px; --t2-w: 84px; --t2-r: -7deg; }
+  .video-board { --t1-x: -10px; --t1-y: 6px; --t1-w: 70px; --t1-r: -40deg; --t2-x: -10px; --t2-y: 6px; --t2-w: 70px; --t2-r: 40deg; }
+  .itinerary { --t1-x: 30%; --t1-w: 96px; --t1-r: -2deg; --t2-x: 12%; --t2-w: 62px; --t2-r: 6deg; }
+  .close-board > p { margin: 14px 0 22px; font-size: 1.1rem; max-width: 40ch; color: #2b2418; }
+  @media (max-width: 860px) { .close-grid { grid-template-columns: 1fr; } }
+</style>

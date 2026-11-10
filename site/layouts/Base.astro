@@ -1,0 +1,39 @@
+---
+import '@fontsource/big-shoulders-display/700';
+import '@fontsource/big-shoulders-display/800';
+import '@fontsource/big-shoulders-display/900';
+import '@fontsource/atkinson-hyperlegible/400';
+import '@fontsource/atkinson-hyperlegible/700';
+import '@fontsource/permanent-marker/400';
+import '@fontsource/londrina-solid/900';
+import '../styles/global.css';
+import Icons from '../components/Icons.astro';
+import Strip from '../components/Strip.astro';
+import Dash from '../components/Dash.astro';
+
+const { title, description, current } = Astro.props;
+---
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0c3a3f" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <a class="skip" href="#contenido">Saltar al contenido</a>
+    <Icons />
+    <div class="windshield">
+      <Strip current={current} />
+      <main id="contenido">
+        <slot />
+      </main>
+    </div>
+    <Dash />
+  </body>
+</html>
